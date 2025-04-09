@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YAS - حلول برمجية مبتكرة للشركات الحديثة</title>
+
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="YAS - حلول برمجية مبتكرة للشركات الحديثة">
+    <meta name="description"
+        content="نقدم حلول برمجية متطورة تشمل تطوير الويب، تطبيقات الجوال، استشارات واجهة المستخدم، ديف أوبس، وتطوير الأعمال. نحول أفكارك إلى تكنولوجيا قوية.">
+    <meta name="keywords"
+        content="تطوير برمجي, تطوير مواقع, تطبيقات جوال, واجهة مستخدم, ديف أوبس, تحول رقمي, شركات تقنية, حلول برمجية">
+    <meta name="author" content="YAS">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yas.com/">
+    <meta property="og:title" content="YAS - حلول برمجية مبتكرة للشركات الحديثة">
+    <meta property="og:description"
+        content="نقدم حلول برمجية متطورة تشمل تطوير الويب، تطبيقات الجوال، استشارات واجهة المستخدم، ديف أوبس، وتطوير الأعمال. نحول أفكارك إلى تكنولوجيا قوية.">
+    <meta property="og:image"
+        content="https://static.readdy.ai/image/9932706d3dbe012697faa2b5a7c0f59a/92b2b1bb9d0ba87dfb1007e1c5debcab.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://yas.com/">
+    <meta property="twitter:title" content="YAS - حلول برمجية مبتكرة للشركات الحديثة">
+    <meta property="twitter:description"
+        content="نقدم حلول برمجية متطورة تشمل تطوير الويب، تطبيقات الجوال، استشارات واجهة المستخدم، ديف أوبس، وتطوير الأعمال. نحول أفكارك إلى تكنولوجيا قوية.">
+    <meta property="twitter:image"
+        content="https://static.readdy.ai/image/9932706d3dbe012697faa2b5a7c0f59a/92b2b1bb9d0ba87dfb1007e1c5debcab.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/yass logo-05.png">
+
+    <!-- Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config = { theme: { extend: { colors: { primary: '#1748FC', secondary: '#13EEFF' }, borderRadius: { 'none': '0px', 'sm': '4px', DEFAULT: '8px', 'md': '12px', 'lg': '16px', 'xl': '20px', '2xl': '24px', '3xl': '32px', 'full': '9999px', 'button': '8px' } } } }</script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "YAS",
+    "url": "https://yas.com",
+    "logo": "assets/yass logo-05.png",
+    "description": "حلول برمجية مبتكرة للشركات الحديثة. نحول الأفكار إلى تكنولوجيا قوية منذ عام 2015.",
+    "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "SA"
+    },
+    "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "availableLanguage": ["Arabic"]
+    },
+    "sameAs": [
+        "https://facebook.com/yas",
+        "https://twitter.com/yas",
+        "https://linkedin.com/company/yas",
+        "https://instagram.com/yas"
+    ]
+}
+</script>
+</head>
+
+<body class="bg-[#FFFFFF]">
+    <!-- Header Section -->
+    <header class="fixed top-0 left-0 right-0 bg-[#FFFFFF] shadow-sm z-50">
+        <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="#" class="flex items-center">
+                <img src="assets/yass logo-05.png" alt="شعار YAS" class="h-16 w-auto object-contain">
+            </a>
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex items-center space-x-8 space-x-reverse">
+                <a href="#" class="text-gray-900 hover:text-primary font-medium transition-colors">الرئيسية</a>
+                <a href="#about" class="text-gray-600 hover:text-primary font-medium transition-colors">من نحن</a>
+                <a href="#services" class="text-gray-600 hover:text-primary font-medium transition-colors">خدماتنا</a>
+                <a href="#contact" class="text-gray-600 hover:text-primary font-medium transition-colors">اتصل بنا</a>
+            </nav>
+            <button
+                class="hidden md:block bg-primary text-white px-5 py-2 !rounded-button font-medium hover:bg-primary/90 transition-colors whitespace-nowrap">طلب
+                مشروع</button>
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden w-10 h-10 flex items-center justify-center text-gray-700">
+                <i class="ri-menu-line ri-lg"></i>
+            </button>
+        </div>
+        <!-- Mobile Navigation (Hidden by default) -->
+        <div class="hidden bg-[#FFFFFF] shadow-lg md:hidden absolute w-full">
+            <div class="container mx-auto px-6 py-4 flex flex-col space-y-4">
+                <a href="#" class="text-gray-900 hover:text-primary font-medium py-2 transition-colors">الرئيسية</a>
+                <a href="#about" class="text-gray-600 hover:text-primary font-medium py-2 transition-colors">من نحن</a>
+                <a href="#services"
+                    class="text-gray-600 hover:text-primary font-medium py-2 transition-colors">خدماتنا</a>
+                <a href="#contact" class="text-gray-600 hover:text-primary font-medium py-2 transition-colors">اتصل
+                    بنا</a>
+                <button
+                    class="bg-primary text-white px-5 py-2 !rounded-button font-medium hover:bg-primary/90 transition-colors whitespace-nowrap w-full">طلب
+                    مشروع</button>
+            </div>
+        </div>
+    </header>
+    <!-- Hero Section -->
+    <section class="hero-section pt-48 pb-20 relative">
+        <div class="absolute inset-0 bg-gradient-to-r from-primary/90 via-secondary/70 to-[#FFFFFF]/20"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="w-full max-w-2xl ml-auto">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">حوّل أفكارك إلى
+                    واقع رقمي</h1>
+                <p class="text-lg md:text-xl text-white mb-8 max-w-xl">
+                    في YAS، نؤمن أن كل فكرة تستحق أن تُبنى. نحن هنا لنرافقك في رحلتك من أول شرارة حتى إطلاق منتجك
+                    البرمجي باحترافية وجودة عالية.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <button
+                        class="bg-primary text-white px-6 py-3 !rounded-button font-medium hover:bg-primary/90 transition-colors whitespace-nowrap flex items-center justify-center">
+                        <span>طلب مشروع</span>
+                        <i class="ri-arrow-left-line mr-2"></i>
+                    </button>
+                    <button
+                        class="bg-[#FFFFFF] text-gray-800 border border-gray-300 px-6 py-3 !rounded-button font-medium hover:bg-gray-50 transition-colors whitespace-nowrap">اعرف
+                        المزيد</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Features Grid -->
+    <section id="services" class="py-20 bg-gray-50 overflow-hidden">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 opacity-0 animate-fade-in">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">ميزات قوية للشركات الحديثة</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">مجموعة أدواتنا الشاملة تساعدك على تبسيط سير العمل، وتحسين
+                    التعاون، ودفع نمو الأعمال.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+                <!-- Feature 1 -->
+                <div
+                    class="feature-card bg-[#FFFFFF] p-6 rounded shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
+                    <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mb-6 animate-float">
+                        <i class="ri-code-line ri-lg text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">تطوير الويب</h3>
+                    <p class="text-gray-600">مواقع ويب وتطبيقات متجاوبة مخصصة مبنية بأحدث التقنيات لتقديم تجارب مستخدم
+                        استثنائية.</p>
+                    <div class="mt-4 h-1 w-0 bg-primary transition-all duration-700 service-line"></div>
+                </div>
+                <!-- Feature 2 -->
+                <div
+                    class="feature-card bg-[#FFFFFF] p-6 rounded shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
+                    <div
+                        class="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center mb-6 animate-float">
+                        <i class="ri-smartphone-line ri-lg text-green-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">تطوير الجوال</h3>
+                    <p class="text-gray-600">تطبيقات جوال أصلية ومتعددة المنصات لنظامي iOS و Android توفر أداءً سلسًا
+                        وواجهات مستخدم جذابة.</p>
+                    <div class="mt-4 h-1 w-0 bg-green-600 transition-all duration-700 service-line"></div>
+                </div>
+                <!-- Feature 3 -->
+                <div
+                    class="feature-card bg-[#FFFFFF] p-6 rounded shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
+                    <div
+                        class="w-14 h-14 bg-purple-100 rounded-full flex items-center justify-center mb-6 animate-float">
+                        <i class="ri-layout-line ri-lg text-purple-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">استشارات واجهة المستخدم</h3>
+                    <p class="text-gray-600">حلول تصميم تركز على المستخدم تعزز سهولة الاستخدام وإمكانية الوصول والجاذبية
+                        البصرية لخلق تجارب رقمية لا تُنسى.</p>
+                    <div class="mt-4 h-1 w-0 bg-purple-600 transition-all duration-700 service-line"></div>
+                </div>
+                <!-- Feature 4 -->
+                <div
+                    class="feature-card bg-[#FFFFFF] p-6 rounded shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
+                    <div
+                        class="w-14 h-14 bg-amber-100 rounded-full flex items-center justify-center mb-6 animate-float">
+                        <i class="ri-server-line ri-lg text-amber-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">ديف أوبس</h3>
+                    <p class="text-gray-600">تبسيط خط إنتاج التطوير مع التكامل المستمر وأتمتة النشر وحلول إدارة البنية
+                        التحتية.</p>
+                    <div class="mt-4 h-1 w-0 bg-amber-600 transition-all duration-700 service-line"></div>
+                </div>
+                <!-- Feature 5 -->
+                <div
+                    class="feature-card bg-[#FFFFFF] p-6 rounded shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105">
+                    <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mb-6 animate-float">
+                        <i class="ri-line-chart-line ri-lg text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">تطوير الأعمال</h3>
+                    <p class="text-gray-600">خدمات استشارية استراتيجية وتحول رقمي لمساعدة عملك على النمو وتحسين العمليات
+                        وزيادة حصتك في السوق.</p>
+                    <div class="mt-4 h-1 w-0 bg-blue-600 transition-all duration-700 service-line"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-[#FFFFFF]">
+        <div class="container mx-auto px-6">
+            <!-- About Us Content -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+                <div class="order-2 lg:order-1">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-6">من نحن</h2>
+                    <p class="text-gray-600 mb-6">نحن YAS، شركة برمجيات متخصصة في تحويل الأفكار إلى حلول رقمية متكاملة.
+                    </p>
+                    <p class="text-gray-600 mb-6">انطلقت رؤيتنا من إيمان عميق بأن كل فكرة، مهما كانت بسيطة، يمكن أن
+                        تُحدث فرقًا إذا تمت ترجمتها بشكل صحيح إلى منتج فعّال.</p>
+                    <div class="grid grid-cols-2 gap-6 mt-8">
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-3 flex items-center">
+                                <i class="ri-focus-3-line ri-lg text-primary ml-2"></i>
+                                مهمتنا
+                            </h3>
+                            <p class="text-gray-600">نقدم خدمات تطوير البرمجيات، وتصميم واجهات الاستخدام، وتحليل الحلول
+                                التقنية، لنمنح عملاءنا أدوات قوية تساعدهم على التميز في سوقهم.
+                                فريقنا يضم مبرمجين ومصممين ومبدعين يعملون بشغف، ونتعامل مع كل مشروع كأنه مشروعنا الشخصي.
+                            </p>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-3 flex items-center">
+                                <i class="ri-eye-line ri-lg text-primary ml-2"></i>
+                                رؤيتنا
+                            </h3>
+                            <p class="text-gray-600">نحن لا نبني مجرد برمجيات، بل نبني شراكات طويلة الأمد، ونفخر بأن
+                                نكون جزءًا من قصص نجاح عملائنا.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-1 lg:order-2 relative">
+                    <img src="https://public.readdy.ai/ai/img_res/d5b011561dd8107954fb1e456f69b4fb.jpg"
+                        alt="فريق تك سوليوشنز" class="rounded-lg shadow-lg w-full h-auto object-cover object-top">
+                    <div class="absolute -bottom-6 -left-6 bg-primary text-white p-4 rounded-lg shadow-lg">
+                        <p class="font-bold text-xl">+50</p>
+                        <p class="text-sm">خبير تقني</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Our Values -->
+            <div class="mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-10 text-center">قيمنا</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                            <i class="ri-award-line ri-lg text-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3">التميز</h3>
+                        <p class="text-gray-600">نسعى دائمًا لتقديم أعلى مستويات الجودة في كل جانب من جوانب عملنا، من
+                            التطوير إلى دعم العملاء.</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center mb-4">
+                            <i class="ri-lightbulb-line ri-lg text-green-600"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3">الابتكار</h3>
+                        <p class="text-gray-600">نشجع التفكير الإبداعي ونتبنى التقنيات الجديدة لتقديم حلول مبتكرة تتجاوز
+                            توقعات عملائنا.</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-14 h-14 bg-purple-100 rounded-full flex items-center justify-center mb-4">
+                            <i class="ri-team-line ri-lg text-purple-600"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3">التعاون</h3>
+                        <p class="text-gray-600">نؤمن بقوة العمل الجماعي ونبني علاقات شراكة حقيقية مع عملائنا لتحقيق
+                            النجاح المشترك.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Social Proof Section -->
+    <section id="about" class="pb-20 bg-[#FFFFFF]">
+        <div class="container mx-auto px-6">
+            <!-- Testimonial -->
+            <div class="max-w-4xl mx-auto bg-gray-50 p-8 rounded-lg shadow-sm">
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                    <img src="https://public.readdy.ai/ai/img_res/8ccf18363be414d9090253e17519c988.jpg" alt="عميل"
+                        class="w-24 h-24 rounded-full object-cover object-top">
+                    <div>
+                        <p class="text-gray-700 italic mb-4">"كان تنفيذ هذا البرنامج تحولًا لأعمالنا. لقد تجاوزت الواجهة
+                            البديهية والتحليلات القوية ودعم العملاء الاستثنائي توقعاتنا. لقد شهدنا زيادة بنسبة 30% في
+                            الإنتاجية منذ التبني."</p>
+                        <p class="font-semibold text-gray-900">سارة الخالدي</p>
+                        <p class="text-gray-600 text-sm">المدير التقني، شركة الابتكارات العالمية</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer id="contact" class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <a href="#" class="flex items-center mb-4">
+                        <img src="assets/yass logo-05.png" alt="شعار YAS" class="h-16 w-auto object-contain">
+                    </a>
+                    <p class="text-gray-400 mb-4">حلول برمجية مبتكرة للشركات الحديثة. نحول الأفكار إلى تكنولوجيا قوية
+                        منذ عام 2015.</p>
+                    <div class="flex space-x-4">
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition-colors">
+                            <i class="ri-facebook-fill"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition-colors">
+                            <i class="ri-twitter-x-fill"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition-colors">
+                            <i class="ri-linkedin-fill"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition-colors">
+                            <i class="ri-instagram-fill"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">روابط سريعة</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">الرئيسية</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">من نحن</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">خدماتنا</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                <!-- Services -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">الخدمات</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">تطوير الويب</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">تطوير الجوال</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">استشارات واجهة
+                                المستخدم</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">ديف أوبس</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">تطوير الأعمال</a></li>
+                    </ul>
+                </div>
+                <!-- Contact Form -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">اتصل بنا</h3>
+                    <p class="text-gray-400 mb-4">تواصل مع فريقنا لأي استفسارات.</p>
+                    <form class="space-y-3">
+                        <input type="email" placeholder="عنوان بريدك الإلكتروني"
+                            class="bg-gray-800 text-white px-4 py-2 !rounded-button border-none focus:outline-none focus:ring-2 focus:ring-primary w-full text-sm">
+                        <textarea placeholder="رسالتك" rows="3"
+                            class="bg-gray-800 text-white px-4 py-2 !rounded-button border-none focus:outline-none focus:ring-2 focus:ring-primary w-full text-sm"></textarea>
+                        <button type="submit"
+                            class="bg-primary text-white px-4 py-2 !rounded-button hover:bg-primary/90 transition-colors whitespace-nowrap w-full">إرسال
+                            الرسالة</button>
+                    </form>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">© 2025 تك سوليوشنز. جميع الحقوق محفوظة.</p>
+                <div class="flex space-x-6 space-x-reverse">
+                    <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">سياسة الخصوصية</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">شروط الخدمة</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">سياسة ملفات تعريف
+                        الارتباط</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>

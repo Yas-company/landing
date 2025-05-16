@@ -12,14 +12,34 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Animate on scroll
-    const animateElements = document.querySelectorAll('.feature-card, .hero-section h1, .hero-section p, .hero-section .flex, .animate-fade-in');
     const animateOnScroll = () => {
+        // Handle feature cards and hero elements
+        const animateElements = document.querySelectorAll('.feature-card, .hero-section h1, .hero-section p, .hero-section .flex, .animate-fade-in');
         animateElements.forEach(element => {
             const elementTop = element.getBoundingClientRect().top;
             const elementVisible = 150;
             if (elementTop < window.innerHeight - elementVisible) {
                 element.classList.add('animate-in');
             }
+        });
+
+        // Handle fade-in and fade-in-up animations
+        const fadeElements = document.querySelectorAll('.animate-fade-in, .animate-fade-in-up');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    if (entry.target.classList.contains('animate-fade-in-up')) {
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        fadeElements.forEach(element => {
+            observer.observe(element);
         });
     };
 

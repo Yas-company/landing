@@ -11,49 +11,50 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Animate on scroll
-    const animateOnScroll = () => {
-        // Handle feature cards and hero elements
-        const animateElements = document.querySelectorAll('.feature-card, .hero-section h1, .hero-section p, .hero-section .flex, .animate-fade-in');
-        animateElements.forEach(element => {
-            const elementTop = element.getBoundingClientRect().top;
-            const elementVisible = 150;
-            if (elementTop < window.innerHeight - elementVisible) {
-                element.classList.add('animate-in');
-            }
-        });
-
-        // Handle fade-in and fade-in-up animations
-        const fadeElements = document.querySelectorAll('.animate-fade-in, .animate-fade-in-up');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    if (entry.target.classList.contains('animate-fade-in-up')) {
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                }
-            });
-        }, {
-            threshold: 0.1
-        });
-
-        fadeElements.forEach(element => {
-            observer.observe(element);
-        });
+    // Intersection Observer for all animated elements
+    const animatedElements = document.querySelectorAll('.animate-fade-in, .animate-fade-in-up, .animate-fade-in-right, .service-card, .feature-card');
+    
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
     };
 
-    // Initial check for elements in view
-    animateOnScroll();
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const element = entry.target;
+                
+                // Add appropriate animation class based on element type
+                if (element.classList.contains('animate-fade-in')) {
+                    element.style.opacity = '1';
+                } else if (element.classList.contains('animate-fade-in-up')) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                } else if (element.classList.contains('animate-fade-in-right')) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateX(0)';
+                } else if (element.classList.contains('service-card')) {
+                    element.classList.add('animate-in');
+                } else if (element.classList.contains('feature-card')) {
+                    element.classList.add('animate-in');
+                }
 
-    // Add scroll event listener
-    window.addEventListener('scroll', animateOnScroll);
+                // Stop observing once animation is triggered
+                observer.unobserve(element);
+            }
+        });
+    }, observerOptions);
 
-    // Add staggered animation to service cards on hover
-    const serviceCards = document.querySelectorAll('#services .feature-card');
+    // Observe all animated elements
+    animatedElements.forEach(element => {
+        observer.observe(element);
+    });
+
+    // Add hover animations to service cards
+    const serviceCards = document.querySelectorAll('.service-card');
     serviceCards.forEach((card, index) => {
         card.addEventListener('mouseenter', () => {
-            // Add staggered animation to other cards
             serviceCards.forEach((otherCard, otherIndex) => {
                 if (otherCard !== card) {
                     otherCard.style.transition = 'transform 0.3s ease';
@@ -64,7 +65,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         card.addEventListener('mouseleave', () => {
-            // Reset other cards
             serviceCards.forEach((otherCard) => {
                 otherCard.style.transition = 'transform 0.3s ease, opacity 0.3s ease';
                 otherCard.style.transform = '';
@@ -73,37 +73,36 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Animate counter numbers
-    const counterElements = document.querySelectorAll('.text-4xl.font-bold.text-primary');
-    const animateCounters = () => {
-        counterElements.forEach(counter => {
-            const target = parseInt(counter.innerText.replace('+', ''));
-            const suffix = counter.innerText.includes('+') ? '+' : '';
-            let count = 0;
-            const duration = 2000; // 2 seconds
-            const increment = Math.ceil(target / (duration / 30));
-            const updateCounter = () => {
-                if (count < target) {
-                    count += increment;
-                    if (count > target) count = target;
-                    counter.innerText = count + suffix;
-                    setTimeout(updateCounter, 30);
-                }
-            };
-
-            // Start animation when element is in view
-            const observer = new IntersectionObserver((entries) => {
-                if (entries[0].isIntersecting) {
-                    updateCounter();
-                    observer.disconnect();
-                }
-            }, { threshold: 0.5 });
-            observer.observe(counter);
+    // Animate counter numbers when in view
+    const counterElements = document.querySelectorAll('.text-4xl.font-bold.text-[#13EEFF]');
+    const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const counter = entry.target;
+                const target = parseInt(counter.innerText.replace('+', ''));
+                const suffix = counter.innerText.includes('+') ? '+' : '';
+                let count = 0;
+                const duration = 2000;
+                const increment = Math.ceil(target / (duration / 30));
+                
+                const updateCounter = () => {
+                    if (count < target) {
+                        count += increment;
+                        if (count > target) count = target;
+                        counter.innerText = count + suffix;
+                        setTimeout(updateCounter, 30);
+                    }
+                };
+                
+                updateCounter();
+                counterObserver.unobserve(counter);
+            }
         });
-    };
+    }, { threshold: 0.5 });
 
-    // Initialize counter animation
-    animateCounters();
+    counterElements.forEach(counter => {
+        counterObserver.observe(counter);
+    });
 
     // Add hover animations to social icons
     const socialIcons = document.querySelectorAll('footer .flex.space-x-4 a');

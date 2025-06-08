@@ -40,21 +40,20 @@
         },
       };
     </script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body class="bg-gray-50 text-gray-800">
     <!-- Navigation -->
-    <nav class="fixed w-full top-0 right-0 z-50 px-6 py-4 transition-all duration-300" id="mainNav">
+    <nav
+      class="fixed w-full top-0 right-0 z-50 px-6 py-4 transition-all duration-300"
+      id="mainNav"
+    >
       <div class="max-w-6xl mx-auto">
         <div
           class="nav-container bg-white/10 backdrop-blur-md rounded-full border border-white/20 shadow-lg shadow-black/5 px-6 py-3 flex items-center justify-between transition-all duration-300"
         >
           <a href="#" class="flex items-center">
-            <img
-              src="assets/yass logo-05.png"
-              alt="YAS Logo"
-              class="h-14"
-            />
+            <img src="assets/yass logo-05.png" alt="YAS Logo" class="h-14" />
           </a>
           <div class="hidden md:flex-1 md:flex items-center justify-center">
             <div class="flex items-center space-x-8">
@@ -79,11 +78,6 @@
                 >إنجازاتنا</a
               >
               <a
-                href="#success-stories"
-                class="nav-link text-white hover:text-primary transition-all duration-300 mx-4"
-                >قصص النجاح</a
-              >
-              <a
                 href="#contact-section"
                 class="nav-link text-white hover:text-primary transition-all duration-300 mx-4"
                 >تواصل معنا</a
@@ -106,7 +100,9 @@
 
         <!-- Mobile Menu -->
         <div class="md:hidden" id="mobileMenu">
-          <div class="nav-mobile-container hidden bg-white/95 backdrop-blur-md mt-4 rounded-2xl border border-white/20 shadow-lg shadow-black/5 p-4 transition-all duration-300">
+          <div
+            class="nav-mobile-container hidden bg-white/95 backdrop-blur-md mt-4 rounded-2xl border border-white/20 shadow-lg shadow-black/5 p-4 transition-all duration-300"
+          >
             <div class="flex flex-col space-y-4">
               <a
                 href="#about"
@@ -129,11 +125,6 @@
                 >إنجازاتنا</a
               >
               <a
-                href="#success-stories"
-                class="nav-link-mobile text-gray-700 hover:text-primary transition-all duration-300 px-4 py-2 rounded-lg hover:bg-primary/5"
-                >قصص النجاح</a
-              >
-              <a
                 href="#contact-section"
                 class="nav-link-mobile text-gray-700 hover:text-primary transition-all duration-300 px-4 py-2 rounded-lg hover:bg-primary/5"
                 >تواصل معنا</a
@@ -151,71 +142,76 @@
 
     <script>
       // Navbar scroll behavior
-      document.addEventListener('DOMContentLoaded', function() {
-        const nav = document.getElementById('mainNav');
-        const navContainer = nav.querySelector('.nav-container');
-        const navLinks = nav.querySelectorAll('.nav-link');
-        const navMenuBtn = nav.querySelector('.nav-menu-btn');
-        const heroSection = document.querySelector('section'); // First section is hero
-        const mobileMenu = document.getElementById('mobileMenu');
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const mobileMenuContainer = document.querySelector('.nav-mobile-container');
-        
+      document.addEventListener("DOMContentLoaded", function () {
+        const nav = document.getElementById("mainNav");
+        const navContainer = nav.querySelector(".nav-container");
+        const navLinks = nav.querySelectorAll(".nav-link");
+        const navMenuBtn = nav.querySelector(".nav-menu-btn");
+        const heroSection = document.querySelector("section"); // First section is hero
+        const mobileMenu = document.getElementById("mobileMenu");
+        const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+        const mobileMenuContainer = document.querySelector(
+          ".nav-mobile-container"
+        );
+
         // Mobile menu toggle
-        mobileMenuBtn.addEventListener('click', () => {
-          mobileMenuContainer.classList.toggle('hidden');
-          const isOpen = !mobileMenuContainer.classList.contains('hidden');
-          mobileMenuBtn.innerHTML = isOpen ? '<i class="ri-close-line ri-lg"></i>' : '<i class="ri-menu-line ri-lg"></i>';
+        mobileMenuBtn.addEventListener("click", () => {
+          mobileMenuContainer.classList.toggle("hidden");
+          const isOpen = !mobileMenuContainer.classList.contains("hidden");
+          mobileMenuBtn.innerHTML = isOpen
+            ? '<i class="ri-close-line ri-lg"></i>'
+            : '<i class="ri-menu-line ri-lg"></i>';
         });
 
         // Close mobile menu when clicking a link
-        document.querySelectorAll('.nav-link-mobile').forEach(link => {
-          link.addEventListener('click', () => {
-            mobileMenuContainer.classList.add('hidden');
+        document.querySelectorAll(".nav-link-mobile").forEach((link) => {
+          link.addEventListener("click", () => {
+            mobileMenuContainer.classList.add("hidden");
             mobileMenuBtn.innerHTML = '<i class="ri-menu-line ri-lg"></i>';
           });
         });
-        
+
         const updateNavbar = () => {
           const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
           const scrollPosition = window.scrollY;
-          
+
           if (scrollPosition > heroBottom - nav.offsetHeight) {
             // Past hero section - light background style
-            navContainer.classList.remove('bg-white/10', 'border-white/20');
-            navContainer.classList.add('bg-white', 'border-gray-100');
-            navLinks.forEach(link => {
-              link.classList.remove('text-white');
-              link.classList.add('text-gray-700');
+            navContainer.classList.remove("bg-white/10", "border-white/20");
+            navContainer.classList.add("bg-white", "border-gray-100");
+            navLinks.forEach((link) => {
+              link.classList.remove("text-white");
+              link.classList.add("text-gray-700");
             });
-            navMenuBtn.classList.remove('text-white');
-            navMenuBtn.classList.add('text-gray-700');
+            navMenuBtn.classList.remove("text-white");
+            navMenuBtn.classList.add("text-gray-700");
           } else {
             // On hero section - transparent style
-            navContainer.classList.add('bg-white/10', 'border-white/20');
-            navContainer.classList.remove('bg-white', 'border-gray-100');
-            navLinks.forEach(link => {
-              link.classList.add('text-white');
-              link.classList.remove('text-gray-700');
+            navContainer.classList.add("bg-white/10", "border-white/20");
+            navContainer.classList.remove("bg-white", "border-gray-100");
+            navLinks.forEach((link) => {
+              link.classList.add("text-white");
+              link.classList.remove("text-gray-700");
             });
-            navMenuBtn.classList.add('text-white');
-            navMenuBtn.classList.remove('text-gray-700');
+            navMenuBtn.classList.add("text-white");
+            navMenuBtn.classList.remove("text-gray-700");
           }
         };
 
         // Initial check
         updateNavbar();
-        
+
         // Update on scroll
-        window.addEventListener('scroll', updateNavbar);
-        
+        window.addEventListener("scroll", updateNavbar);
+
         // Update on resize
-        window.addEventListener('resize', updateNavbar);
+        window.addEventListener("resize", updateNavbar);
 
         // Close mobile menu on window resize if open
-        window.addEventListener('resize', () => {
-          if (window.innerWidth >= 768) { // md breakpoint
-            mobileMenuContainer.classList.add('hidden');
+        window.addEventListener("resize", () => {
+          if (window.innerWidth >= 768) {
+            // md breakpoint
+            mobileMenuContainer.classList.add("hidden");
             mobileMenuBtn.innerHTML = '<i class="ri-menu-line ri-lg"></i>';
           }
         });
@@ -223,69 +219,113 @@
     </script>
 
     <!-- Hero Section -->
-    <section class="min-h-screen flex items-center relative overflow-hidden bg-gradient-to-br from-gray-900 to-gray-800">
+    <section
+      class="min-h-screen flex items-center relative overflow-hidden bg-gradient-to-br from-gray-900 to-gray-800"
+    >
       <!-- Animated Background Elements -->
       <div class="absolute inset-0 overflow-hidden pointer-events-none">
         <div class="absolute inset-0 opacity-20">
-          <div class="absolute inset-0 bg-[linear-gradient(to_right,#ffffff12_1px,transparent_1px),linear-gradient(to_bottom,#ffffff12_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
+          <div
+            class="absolute inset-0 bg-[linear-gradient(to_right,#ffffff12_1px,transparent_1px),linear-gradient(to_bottom,#ffffff12_1px,transparent_1px)] bg-[size:4rem_4rem]"
+          ></div>
         </div>
-        <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-primary/10 via-transparent to-transparent"></div>
+        <div
+          class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-primary/10 via-transparent to-transparent"
+        ></div>
       </div>
 
       <div class="container mx-auto px-6 relative z-10 pt-20">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div class="text-right">
             <div class="inline-block mb-6">
-              <div class="flex items-center gap-2 text-primary/80 bg-primary/5 rounded-full py-2 px-4 border border-primary/10">
+              <div
+                class="flex items-center gap-2 text-primary/80 bg-primary/5 rounded-full py-2 px-4 border border-primary/10"
+              >
                 <span class="text-sm font-medium">نرحب بأفكاركم المبتكرة</span>
-                <div class="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
+                <div
+                  class="w-2 h-2 rounded-full bg-primary animate-pulse"
+                ></div>
               </div>
             </div>
-            
+
             <h1 class="text-5xl lg:text-6xl font-bold mb-6 text-white">
               نحوّل أفكارك إلى
-              <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-blue-400 to-primary">منتجات رقمية متميزة</span>
+              <span
+                class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-blue-400 to-primary"
+                >منتجات رقمية متميزة</span
+              >
             </h1>
 
             <div class="space-y-6 text-lg text-gray-300 mb-8">
               <p class="leading-relaxed">
-                في YAS، لا ننتظر أن تصلنا الأفكار مكتملة؛ بل نأخذ رؤية العميل وفكرته، ونحوّلها بخبراتنا التقنية والإبداعية إلى منتج رقمي فعّال، متكامل، وجاهز للنمو — حتى وإن كانت في صورتها الأولية، أو مجرد حاجة في السوق.
+                في YAS، لا ننتظر أن تصلنا الأفكار مكتملة؛ بل نأخذ رؤية العميل
+                وفكرته، ونحوّلها بخبراتنا التقنية والإبداعية إلى منتج رقمي
+                فعّال، متكامل، وجاهز للنمو — حتى وإن كانت في صورتها الأولية، أو
+                مجرد حاجة في السوق.
               </p>
               <p class="leading-relaxed font-medium text-primary">
-                نجاح العميل هو نجاحنا؛ لذا لا نكتفي بالتنفيذ فقط، بل نشاركه بناء النجاح.
+                نجاح العميل هو نجاحنا؛ لذا لا نكتفي بالتنفيذ فقط، بل نشاركه بناء
+                النجاح.
               </p>
             </div>
 
             <div class="flex flex-wrap gap-4 justify-start">
-              <a href="#services" 
-                class="group relative inline-flex items-center justify-center px-8 py-3 font-medium text-white transition-all duration-200 ease-in-out rounded-full overflow-hidden hover:scale-105">
-                <div class="absolute inset-0 bg-gradient-to-r from-primary to-blue-600 transition-all duration-200 group-hover:scale-110"></div>
+              <a
+                href="#services"
+                class="group relative inline-flex items-center justify-center px-8 py-3 font-medium text-white transition-all duration-200 ease-in-out rounded-full overflow-hidden hover:scale-105"
+              >
+                <div
+                  class="absolute inset-0 bg-gradient-to-r from-primary to-blue-600 transition-all duration-200 group-hover:scale-110"
+                ></div>
                 <div class="relative flex items-center gap-2">
                   استكشف خدماتنا
-                  <i class="ri-arrow-left-line opacity-70 group-hover:translate-x-1 transition-transform"></i>
+                  <i
+                    class="ri-arrow-left-line opacity-70 group-hover:translate-x-1 transition-transform"
+                  ></i>
                 </div>
               </a>
-              <a href="#contact-section" 
-                class="inline-flex items-center gap-2 text-white/80 hover:text-primary transition-colors group">
+              <a
+                href="#contact-section"
+                class="inline-flex items-center gap-2 text-white/80 hover:text-primary transition-colors group"
+              >
                 <span>تواصل معنا</span>
-                <i class="ri-arrow-left-line group-hover:translate-x-1 transition-transform"></i>
+                <i
+                  class="ri-arrow-left-line group-hover:translate-x-1 transition-transform"
+                ></i>
               </a>
             </div>
           </div>
 
           <!-- Animated Elements -->
           <div class="relative hidden lg:block">
-            <div class="absolute -inset-4 bg-gradient-to-br from-primary/20 to-transparent rounded-full animate-pulse"></div>
+            <div
+              class="absolute -inset-4 bg-gradient-to-br from-primary/20 to-transparent rounded-full animate-pulse"
+            ></div>
             <div class="relative rounded-full p-8">
               <!-- Floating Elements -->
-              <div class="absolute top-0 left-0 w-20 h-20 bg-gradient-to-br from-primary/20 to-transparent rounded-full animate-float" style="animation-delay: 0s;"></div>
-              <div class="absolute top-1/4 right-0 w-16 h-16 bg-gradient-to-br from-blue-400/20 to-transparent rounded-full animate-float" style="animation-delay: 0.5s;"></div>
-              <div class="absolute bottom-0 left-1/4 w-24 h-24 bg-gradient-to-br from-primary/30 to-transparent rounded-full animate-float" style="animation-delay: 1s;"></div>
-              
+              <div
+                class="absolute top-0 left-0 w-20 h-20 bg-gradient-to-br from-primary/20 to-transparent rounded-full animate-float"
+                style="animation-delay: 0s"
+              ></div>
+              <div
+                class="absolute top-1/4 right-0 w-16 h-16 bg-gradient-to-br from-blue-400/20 to-transparent rounded-full animate-float"
+                style="animation-delay: 0.5s"
+              ></div>
+              <div
+                class="absolute bottom-0 left-1/4 w-24 h-24 bg-gradient-to-br from-primary/30 to-transparent rounded-full animate-float"
+                style="animation-delay: 1s"
+              ></div>
+
               <!-- Tech Pattern -->
-              <div class="relative w-full aspect-square rounded-full border border-primary/20 p-8 backdrop-blur-sm bg-white/5">
-                <div class="absolute inset-0 bg-[linear-gradient(to_right,#ffffff12_1px,transparent_1px),linear-gradient(to_bottom,#ffffff12_1px,transparent_1px)] bg-[size:2rem_2rem] rounded-full"></div>
-                <div class="h-full rounded-full border border-primary/20 flex items-center justify-center">
+              <div
+                class="relative w-full aspect-square rounded-full border border-primary/20 p-8 backdrop-blur-sm bg-white/5"
+              >
+                <div
+                  class="absolute inset-0 bg-[linear-gradient(to_right,#ffffff12_1px,transparent_1px),linear-gradient(to_bottom,#ffffff12_1px,transparent_1px)] bg-[size:2rem_2rem] rounded-full"
+                ></div>
+                <div
+                  class="h-full rounded-full border border-primary/20 flex items-center justify-center"
+                >
                   <div class="text-6xl text-primary">YAS</div>
                 </div>
               </div>
@@ -297,67 +337,130 @@
 
     <!-- About Us Section -->
     <section id="about" class="py-24 relative overflow-hidden bg-white">
-      <div class="absolute inset-0 bg-gradient-to-b from-gray-50 to-white pointer-events-none"></div>
-      
+      <div
+        class="absolute inset-0 bg-gradient-to-b from-gray-50 to-white pointer-events-none"
+      ></div>
+
       <!-- Decorative Elements -->
-      <div class="absolute top-0 left-0 w-1/3 h-1/3 bg-gradient-to-br from-primary/5 to-transparent rounded-full blur-3xl"></div>
-      <div class="absolute bottom-0 right-0 w-1/2 h-1/2 bg-gradient-to-tl from-primary/5 to-transparent rounded-full blur-3xl"></div>
+      <div
+        class="absolute top-0 left-0 w-1/3 h-1/3 bg-gradient-to-br from-primary/5 to-transparent rounded-full blur-3xl"
+      ></div>
+      <div
+        class="absolute bottom-0 right-0 w-1/2 h-1/2 bg-gradient-to-tl from-primary/5 to-transparent rounded-full blur-3xl"
+      ></div>
 
       <div class="container mx-auto px-6 relative">
         <div class="max-w-3xl mx-auto text-center mb-16">
           <div class="inline-block mb-4">
-            <div class="flex items-center gap-2 text-primary/80 bg-primary/5 rounded-full py-2 px-4 border border-primary/10">
+            <div
+              class="flex items-center gap-2 text-primary/80 bg-primary/5 rounded-full py-2 px-4 border border-primary/10"
+            >
               <span class="text-sm font-medium">من نحن؟</span>
-              <div class="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
             </div>
           </div>
-          <h2 class="text-4xl font-bold mb-6">شريكك التقني الموثوق</h2>
+          <p class="text-gray-600 text-lg leading-relaxed mb-8">
+            YAS هي شركة تقنية سعودية، متخصصة في تطوير الحلول الرقمية المخصصة،
+            تأسست لتكون الذراع التقني الموثوق للمشاريع الناشئة، والمنصات
+            الخدمية، والشركات الباحثة عن التميز الرقمي.
+          </p>
           <p class="text-gray-600 text-lg leading-relaxed">
-            YAS هي شركة تقنية سعودية، متخصصة في تطوير الحلول الرقمية المخصصة، تأسست لتكون الذراع التقني الموثوق للمشاريع الناشئة، والمنصات الخدمية، والشركات الباحثة عن التميز الرقمي.
+            نحن لا نقدّم فقط تطبيقات، بل نقدّم حلولًا متكاملة تُبنى باحتراف،
+            وتُدار بعناية، وتُطلق بثقة.
           </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <!-- Vision Card -->
-          <div class="group bg-white rounded-2xl p-8 shadow-lg shadow-gray-100/50 border border-gray-100 hover:border-primary/20 transition-all duration-300">
-            <div class="w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-              <i class="ri-focus-3-line text-2xl text-primary"></i>
+        <!-- Why YAS Section -->
+        <div class="mt-20">
+          <div class="text-center mb-12">
+            <div class="inline-block mb-4">
+              <div
+                class="flex items-center gap-2 text-primary/80 bg-primary/5 rounded-full py-2 px-4 border border-primary/10"
+              >
+                <span class="text-sm font-medium"
+                  >ما الذي يميز YAS عن غيرها؟</span
+                >
+              </div>
             </div>
-            <h3 class="text-xl font-bold mb-4">رؤيتنا</h3>
-            <p class="text-gray-600">
-              أن نكون الشريك التقني الأول في المنطقة لتحويل الأفكار إلى حلول رقمية متميزة.
-            </p>
           </div>
 
-          <!-- Values Card -->
-          <div class="group bg-white rounded-2xl p-8 shadow-lg shadow-gray-100/50 border border-gray-100 hover:border-primary/20 transition-all duration-300">
-            <div class="w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-              <i class="ri-award-line text-2xl text-primary"></i>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Feature 1 -->
+            <div
+              class="group bg-white rounded-2xl p-8 shadow-lg shadow-gray-100/50 border border-gray-100 hover:border-primary/20 transition-all duration-300"
+            >
+              <div
+                class="w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform"
+              >
+                <i class="ri-team-line text-2xl text-primary"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-4">الاحترافية العالية</h3>
+              <p class="text-gray-600">
+                الاحترافية العالية في اختيار الفريق وتوزيع المهام، مع تشكيل فرق
+                تطوير مرنة حسب حجم المشروع ومتطلباته
+              </p>
             </div>
-            <h3 class="text-xl font-bold mb-4">قيمنا</h3>
-            <p class="text-gray-600">
-              الابتكار، الجودة، الموثوقية، والتميز في كل ما نقدمه لعملائنا.
-            </p>
-          </div>
 
-          <!-- Approach Card -->
-          <div class="group bg-white rounded-2xl p-8 shadow-lg shadow-gray-100/50 border border-gray-100 hover:border-primary/20 transition-all duration-300">
-            <div class="w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-              <i class="ri-code-box-line text-2xl text-primary"></i>
+            <!-- Feature 2 -->
+            <div
+              class="group bg-white rounded-2xl p-8 shadow-lg shadow-gray-100/50 border border-gray-100 hover:border-primary/20 transition-all duration-300"
+            >
+              <div
+                class="w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform"
+              >
+                <i class="ri-global-line text-2xl text-primary"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-4">فهم عميق للسوق</h3>
+              <p class="text-gray-600">
+                فهم عميق لسوق الخليج والسعودية وطبيعة المستخدم المحلي، مع تصميم
+                تجارب مستخدم عصرية تراعي السلوك والثقافة
+              </p>
             </div>
-            <h3 class="text-xl font-bold mb-4">نهجنا</h3>
-            <p class="text-gray-600">
-              نحن لا نقدّم فقط تطبيقات، بل نقدّم حلولًا متكاملة تُبنى باحتراف، وتُدار بعناية، وتُطلق بثقة.
-            </p>
+
+            <!-- Feature 3 -->
+            <div
+              class="group bg-white rounded-2xl p-8 shadow-lg shadow-gray-100/50 border border-gray-100 hover:border-primary/20 transition-all duration-300"
+            >
+              <div
+                class="w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform"
+              >
+                <i class="ri-settings-line text-2xl text-primary"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-4">منهجيات حديثة</h3>
+              <p class="text-gray-600">
+                اعتماد أفضل منهجيات العمل الحديثة مثل Agile وScrum، مع التكامل
+                السلس مع خدمات وأنظمة خارجية
+              </p>
+            </div>
+
+            <!-- Feature 4 -->
+            <div
+              class="group bg-white rounded-2xl p-8 shadow-lg shadow-gray-100/50 border border-gray-100 hover:border-primary/20 transition-all duration-300"
+            >
+              <div
+                class="w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform"
+              >
+                <i class="ri-customer-service-2-line text-2xl text-primary"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-4">دعم مستمر</h3>
+              <p class="text-gray-600">
+                متابعة مستمرة وتحديث دائم بعد إطلاق المشروع، مع تقديم الدعم
+                الفني المتواصل
+              </p>
+            </div>
           </div>
         </div>
       </div>
     </section>
     <!-- How We Work Section -->
-    <section id="how-we-work" class="py-20 px-6 bg-gradient-to-b from-gray-50/50 to-white relative overflow-hidden">
+    <section
+      id="how-we-work"
+      class="py-20 px-6 bg-gradient-to-b from-gray-50/50 to-white relative overflow-hidden"
+    >
       <!-- Background Elements -->
-      <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(23,72,252,0.1),transparent)] pointer-events-none"></div>
-      
+      <div
+        class="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(23,72,252,0.1),transparent)] pointer-events-none"
+      ></div>
+
       <div class="max-w-7xl mx-auto relative">
         <div class="text-center mb-16 opacity-0 feature-fade-in">
           <span class="text-primary font-medium">منهجيتنا</span>
@@ -371,121 +474,218 @@
         <!-- Interactive Process Steps -->
         <div class="relative">
           <!-- Progress Line -->
-          <div class="absolute top-1/2 left-8 right-8 h-1 bg-gradient-to-r from-gray-100 via-gray-200 to-gray-100 -translate-y-1/2 hidden lg:block"></div>
-          <div class="absolute top-1/2 left-8 right-8 h-1 bg-gradient-to-r from-primary/10 via-primary/20 to-primary/10 -translate-y-1/2 hidden lg:block work-progress" style="width: 0%"></div>
+          <div
+            class="absolute top-1/2 left-8 right-8 h-1 bg-gradient-to-r from-gray-100 via-gray-200 to-gray-100 -translate-y-1/2 hidden lg:block"
+          ></div>
+          <div
+            class="absolute top-1/2 left-8 right-8 h-1 bg-gradient-to-r from-primary/10 via-primary/20 to-primary/10 -translate-y-1/2 hidden lg:block work-progress"
+            style="width: 0%"
+          ></div>
 
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
             <!-- Step 1 -->
-            <div class="work-step relative opacity-0 translate-y-8" style="transition: all 0.5s ease-out;">
-              <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group">
-                <div class="w-16 h-16 rounded-full bg-gradient-to-br from-primary/5 to-primary/20 flex items-center justify-center mb-6 mx-auto relative group cursor-pointer hover:from-primary/10 hover:to-primary/30 transition-all duration-300">
-                  <div class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center absolute -top-2 -right-2 transform group-hover:rotate-12 transition-transform duration-300">
+            <div
+              class="work-step relative opacity-0 translate-y-8"
+              style="transition: all 0.5s ease-out"
+            >
+              <div
+                class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group"
+              >
+                <div
+                  class="w-16 h-16 rounded-full bg-gradient-to-br from-primary/5 to-primary/20 flex items-center justify-center mb-6 mx-auto relative group cursor-pointer hover:from-primary/10 hover:to-primary/30 transition-all duration-300"
+                >
+                  <div
+                    class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center absolute -top-2 -right-2 transform group-hover:rotate-12 transition-transform duration-300"
+                  >
                     1
                   </div>
-                  <i class="ri-customer-service-line ri-xl text-primary transform group-hover:scale-110 transition-transform duration-300"></i>
+                  <i
+                    class="ri-customer-service-line ri-xl text-primary transform group-hover:scale-110 transition-transform duration-300"
+                  ></i>
                 </div>
-                <h3 class="text-xl font-bold mb-4 text-center group-hover:text-primary transition-colors duration-300">
+                <h3
+                  class="text-xl font-bold mb-4 text-center group-hover:text-primary transition-colors duration-300"
+                >
                   الاستماع والتحليل
                 </h3>
                 <p class="text-gray-600 text-center text-sm">
-                  نبدأ بالاستماع لفكرتك وتحليلها بعمق، لفهم احتياجاتك وأهدافك بشكل دقيق
+                  نبدأ بالاستماع لفكرتك وتحليلها بعمق، لفهم احتياجاتك وأهدافك
+                  بشكل دقيق
                 </p>
-                <div class="h-1 w-0 bg-primary mt-4 mx-auto group-hover:w-1/2 transition-all duration-500"></div>
+                <div
+                  class="h-1 w-0 bg-primary mt-4 mx-auto group-hover:w-1/2 transition-all duration-500"
+                ></div>
               </div>
             </div>
 
             <!-- Step 2 -->
-            <div class="work-step relative opacity-0 translate-y-8" style="transition: all 0.5s ease-out 0.2s;">
-              <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group">
-                <div class="w-16 h-16 rounded-full bg-gradient-to-br from-primary/5 to-primary/20 flex items-center justify-center mb-6 mx-auto relative group cursor-pointer hover:from-primary/10 hover:to-primary/30 transition-all duration-300">
-                  <div class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center absolute -top-2 -right-2 transform group-hover:rotate-12 transition-transform duration-300">
+            <div
+              class="work-step relative opacity-0 translate-y-8"
+              style="transition: all 0.5s ease-out 0.2s"
+            >
+              <div
+                class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group"
+              >
+                <div
+                  class="w-16 h-16 rounded-full bg-gradient-to-br from-primary/5 to-primary/20 flex items-center justify-center mb-6 mx-auto relative group cursor-pointer hover:from-primary/10 hover:to-primary/30 transition-all duration-300"
+                >
+                  <div
+                    class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center absolute -top-2 -right-2 transform group-hover:rotate-12 transition-transform duration-300"
+                  >
                     2
                   </div>
-                  <i class="ri-flow-chart ri-xl text-primary transform group-hover:scale-110 transition-transform duration-300"></i>
+                  <i
+                    class="ri-flow-chart ri-xl text-primary transform group-hover:scale-110 transition-transform duration-300"
+                  ></i>
                 </div>
-                <h3 class="text-xl font-bold mb-4 text-center group-hover:text-primary transition-colors duration-300">
+                <h3
+                  class="text-xl font-bold mb-4 text-center group-hover:text-primary transition-colors duration-300"
+                >
                   التخطيط والتصميم
                 </h3>
                 <p class="text-gray-600 text-center text-sm">
-                  نضع خطة تنفيذ واضحة ومقسّمة على مراحل، مع تصميم تجربة مستخدم مميزة
+                  نضع خطة تنفيذ واضحة ومقسّمة على مراحل، مع تصميم تجربة مستخدم
+                  مميزة
                 </p>
-                <div class="h-1 w-0 bg-primary mt-4 mx-auto group-hover:w-1/2 transition-all duration-500"></div>
+                <div
+                  class="h-1 w-0 bg-primary mt-4 mx-auto group-hover:w-1/2 transition-all duration-500"
+                ></div>
               </div>
             </div>
 
             <!-- Step 3 -->
-            <div class="work-step relative opacity-0 translate-y-8" style="transition: all 0.5s ease-out 0.4s;">
-              <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group">
-                <div class="w-16 h-16 rounded-full bg-gradient-to-br from-primary/5 to-primary/20 flex items-center justify-center mb-6 mx-auto relative group cursor-pointer hover:from-primary/10 hover:to-primary/30 transition-all duration-300">
-                  <div class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center absolute -top-2 -right-2 transform group-hover:rotate-12 transition-transform duration-300">
+            <div
+              class="work-step relative opacity-0 translate-y-8"
+              style="transition: all 0.5s ease-out 0.4s"
+            >
+              <div
+                class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group"
+              >
+                <div
+                  class="w-16 h-16 rounded-full bg-gradient-to-br from-primary/5 to-primary/20 flex items-center justify-center mb-6 mx-auto relative group cursor-pointer hover:from-primary/10 hover:to-primary/30 transition-all duration-300"
+                >
+                  <div
+                    class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center absolute -top-2 -right-2 transform group-hover:rotate-12 transition-transform duration-300"
+                  >
                     3
                   </div>
-                  <i class="ri-code-box-line ri-xl text-primary transform group-hover:scale-110 transition-transform duration-300"></i>
+                  <i
+                    class="ri-code-box-line ri-xl text-primary transform group-hover:scale-110 transition-transform duration-300"
+                  ></i>
                 </div>
-                <h3 class="text-xl font-bold mb-4 text-center group-hover:text-primary transition-colors duration-300">
+                <h3
+                  class="text-xl font-bold mb-4 text-center group-hover:text-primary transition-colors duration-300"
+                >
                   التطوير والبرمجة
                 </h3>
                 <p class="text-gray-600 text-center text-sm">
                   نقوم بالتطوير البرمجي باستخدام أحدث التقنيات وأفضل الممارسات
                 </p>
-                <div class="h-1 w-0 bg-primary mt-4 mx-auto group-hover:w-1/2 transition-all duration-500"></div>
+                <div
+                  class="h-1 w-0 bg-primary mt-4 mx-auto group-hover:w-1/2 transition-all duration-500"
+                ></div>
               </div>
             </div>
 
             <!-- Step 4 -->
-            <div class="work-step relative opacity-0 translate-y-8" style="transition: all 0.5s ease-out 0.6s;">
-              <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group">
-                <div class="w-16 h-16 rounded-full bg-gradient-to-br from-primary/5 to-primary/20 flex items-center justify-center mb-6 mx-auto relative group cursor-pointer hover:from-primary/10 hover:to-primary/30 transition-all duration-300">
-                  <div class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center absolute -top-2 -right-2 transform group-hover:rotate-12 transition-transform duration-300">
+            <div
+              class="work-step relative opacity-0 translate-y-8"
+              style="transition: all 0.5s ease-out 0.6s"
+            >
+              <div
+                class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group"
+              >
+                <div
+                  class="w-16 h-16 rounded-full bg-gradient-to-br from-primary/5 to-primary/20 flex items-center justify-center mb-6 mx-auto relative group cursor-pointer hover:from-primary/10 hover:to-primary/30 transition-all duration-300"
+                >
+                  <div
+                    class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center absolute -top-2 -right-2 transform group-hover:rotate-12 transition-transform duration-300"
+                  >
                     4
                   </div>
-                  <i class="ri-test-tube-line ri-xl text-primary transform group-hover:scale-110 transition-transform duration-300"></i>
+                  <i
+                    class="ri-test-tube-line ri-xl text-primary transform group-hover:scale-110 transition-transform duration-300"
+                  ></i>
                 </div>
-                <h3 class="text-xl font-bold mb-4 text-center group-hover:text-primary transition-colors duration-300">
+                <h3
+                  class="text-xl font-bold mb-4 text-center group-hover:text-primary transition-colors duration-300"
+                >
                   الاختبار والتحسين
                 </h3>
                 <p class="text-gray-600 text-center text-sm">
                   نجري اختبارات مكثفة لضمان الجودة والأداء الأمثل للمنتج
                 </p>
-                <div class="h-1 w-0 bg-primary mt-4 mx-auto group-hover:w-1/2 transition-all duration-500"></div>
+                <div
+                  class="h-1 w-0 bg-primary mt-4 mx-auto group-hover:w-1/2 transition-all duration-500"
+                ></div>
               </div>
             </div>
 
             <!-- Step 5 -->
-            <div class="work-step relative opacity-0 translate-y-8" style="transition: all 0.5s ease-out 0.8s;">
-              <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group">
-                <div class="w-16 h-16 rounded-full bg-gradient-to-br from-primary/5 to-primary/20 flex items-center justify-center mb-6 mx-auto relative group cursor-pointer hover:from-primary/10 hover:to-primary/30 transition-all duration-300">
-                  <div class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center absolute -top-2 -right-2 transform group-hover:rotate-12 transition-transform duration-300">
+            <div
+              class="work-step relative opacity-0 translate-y-8"
+              style="transition: all 0.5s ease-out 0.8s"
+            >
+              <div
+                class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group"
+              >
+                <div
+                  class="w-16 h-16 rounded-full bg-gradient-to-br from-primary/5 to-primary/20 flex items-center justify-center mb-6 mx-auto relative group cursor-pointer hover:from-primary/10 hover:to-primary/30 transition-all duration-300"
+                >
+                  <div
+                    class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center absolute -top-2 -right-2 transform group-hover:rotate-12 transition-transform duration-300"
+                  >
                     5
                   </div>
-                  <i class="ri-rocket-line ri-xl text-primary transform group-hover:scale-110 transition-transform duration-300"></i>
+                  <i
+                    class="ri-rocket-line ri-xl text-primary transform group-hover:scale-110 transition-transform duration-300"
+                  ></i>
                 </div>
-                <h3 class="text-xl font-bold mb-4 text-center group-hover:text-primary transition-colors duration-300">
+                <h3
+                  class="text-xl font-bold mb-4 text-center group-hover:text-primary transition-colors duration-300"
+                >
                   الإطلاق
                 </h3>
                 <p class="text-gray-600 text-center text-sm">
                   نطلق المنتج بعد التأكد من جاهزيته وتوافقه مع المتطلبات
                 </p>
-                <div class="h-1 w-0 bg-primary mt-4 mx-auto group-hover:w-1/2 transition-all duration-500"></div>
+                <div
+                  class="h-1 w-0 bg-primary mt-4 mx-auto group-hover:w-1/2 transition-all duration-500"
+                ></div>
               </div>
             </div>
 
             <!-- Step 6 -->
-            <div class="work-step relative opacity-0 translate-y-8" style="transition: all 0.5s ease-out 1s;">
-              <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group">
-                <div class="w-16 h-16 rounded-full bg-gradient-to-br from-primary/5 to-primary/20 flex items-center justify-center mb-6 mx-auto relative group cursor-pointer hover:from-primary/10 hover:to-primary/30 transition-all duration-300">
-                  <div class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center absolute -top-2 -right-2 transform group-hover:rotate-12 transition-transform duration-300">
+            <div
+              class="work-step relative opacity-0 translate-y-8"
+              style="transition: all 0.5s ease-out 1s"
+            >
+              <div
+                class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group"
+              >
+                <div
+                  class="w-16 h-16 rounded-full bg-gradient-to-br from-primary/5 to-primary/20 flex items-center justify-center mb-6 mx-auto relative group cursor-pointer hover:from-primary/10 hover:to-primary/30 transition-all duration-300"
+                >
+                  <div
+                    class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center absolute -top-2 -right-2 transform group-hover:rotate-12 transition-transform duration-300"
+                  >
                     6
                   </div>
-                  <i class="ri-customer-service-2-line ri-xl text-primary transform group-hover:scale-110 transition-transform duration-300"></i>
+                  <i
+                    class="ri-customer-service-2-line ri-xl text-primary transform group-hover:scale-110 transition-transform duration-300"
+                  ></i>
                 </div>
-                <h3 class="text-xl font-bold mb-4 text-center group-hover:text-primary transition-colors duration-300">
+                <h3
+                  class="text-xl font-bold mb-4 text-center group-hover:text-primary transition-colors duration-300"
+                >
                   المتابعة والدعم
                 </h3>
                 <p class="text-gray-600 text-center text-sm">
                   نقدم متابعة مستمرة ودعم فني متواصل بعد إطلاق المنتج
                 </p>
-                <div class="h-1 w-0 bg-primary mt-4 mx-auto group-hover:w-1/2 transition-all duration-500"></div>
+                <div
+                  class="h-1 w-0 bg-primary mt-4 mx-auto group-hover:w-1/2 transition-all duration-500"
+                ></div>
               </div>
             </div>
           </div>
@@ -493,49 +693,53 @@
       </div>
 
       <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener("DOMContentLoaded", function () {
           // Intersection Observer for scroll animations
-          const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-              if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-                
-                // Animate progress line when first step is visible
-                if (entry.target.classList.contains('work-step')) {
-                  const progressLine = document.querySelector('.work-progress');
-                  if (progressLine) {
-                    progressLine.style.width = '100%';
-                    progressLine.style.transition = 'width 1.5s ease-out';
+          const observer = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  entry.target.style.opacity = "1";
+                  entry.target.style.transform = "translateY(0)";
+
+                  // Animate progress line when first step is visible
+                  if (entry.target.classList.contains("work-step")) {
+                    const progressLine =
+                      document.querySelector(".work-progress");
+                    if (progressLine) {
+                      progressLine.style.width = "100%";
+                      progressLine.style.transition = "width 1.5s ease-out";
+                    }
                   }
                 }
-              }
-            });
-          }, {
-            threshold: 0.1
-          });
+              });
+            },
+            {
+              threshold: 0.1,
+            }
+          );
 
           // Observe all work steps
-          document.querySelectorAll('.work-step').forEach(step => {
+          document.querySelectorAll(".work-step").forEach((step) => {
             observer.observe(step);
           });
 
           // Add hover effect to steps
-          const workSteps = document.querySelectorAll('.work-step');
+          const workSteps = document.querySelectorAll(".work-step");
           workSteps.forEach((step, index) => {
-            step.addEventListener('mouseenter', () => {
+            step.addEventListener("mouseenter", () => {
               // Add active state to current step and previous steps
               workSteps.forEach((s, i) => {
                 if (i <= index) {
-                  s.classList.add('active');
+                  s.classList.add("active");
                 }
               });
             });
 
-            step.addEventListener('mouseleave', () => {
+            step.addEventListener("mouseleave", () => {
               // Remove active state from all steps
-              workSteps.forEach(s => {
-                s.classList.remove('active');
+              workSteps.forEach((s) => {
+                s.classList.remove("active");
               });
             });
           });
@@ -546,7 +750,7 @@
         .work-progress {
           transition: width 1.5s ease-out;
         }
-        
+
         .work-step {
           transition: all 0.3s ease-out;
         }
@@ -560,9 +764,15 @@
         }
 
         @keyframes float {
-          0% { transform: translateY(0px); }
-          50% { transform: translateY(-10px); }
-          100% { transform: translateY(0px); }
+          0% {
+            transform: translateY(0px);
+          }
+          50% {
+            transform: translateY(-10px);
+          }
+          100% {
+            transform: translateY(0px);
+          }
         }
 
         .animate-float {
@@ -583,27 +793,45 @@
 
         <!-- Interactive Tab Navigation -->
         <div class="flex flex-wrap justify-center gap-4 mb-12" role="tablist">
-          <button class="tab-button active px-6 py-3 rounded-xl bg-primary text-white shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-all duration-300" data-tab="market">
+          <button
+            class="tab-button active px-6 py-3 rounded-xl bg-primary text-white shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-all duration-300"
+            data-tab="market"
+          >
             <i class="ri-map-pin-user-line ri-lg mb-2"></i>
             <span class="block">فهم السوق</span>
           </button>
-          <button class="tab-button px-6 py-3 rounded-xl bg-white text-gray-600 shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300" data-tab="quality">
+          <button
+            class="tab-button px-6 py-3 rounded-xl bg-white text-gray-600 shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+            data-tab="quality"
+          >
             <i class="ri-award-line ri-lg mb-2"></i>
             <span class="block">جودة التنفيذ</span>
           </button>
-          <button class="tab-button px-6 py-3 rounded-xl bg-white text-gray-600 shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300" data-tab="commitment">
+          <button
+            class="tab-button px-6 py-3 rounded-xl bg-white text-gray-600 shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+            data-tab="commitment"
+          >
             <i class="ri-time-line ri-lg mb-2"></i>
             <span class="block">الالتزام</span>
           </button>
-          <button class="tab-button px-6 py-3 rounded-xl bg-white text-gray-600 shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300" data-tab="passion">
+          <button
+            class="tab-button px-6 py-3 rounded-xl bg-white text-gray-600 shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+            data-tab="passion"
+          >
             <i class="ri-heart-line ri-lg mb-2"></i>
             <span class="block">الشغف</span>
           </button>
-          <button class="tab-button px-6 py-3 rounded-xl bg-white text-gray-600 shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300" data-tab="support">
+          <button
+            class="tab-button px-6 py-3 rounded-xl bg-white text-gray-600 shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+            data-tab="support"
+          >
             <i class="ri-customer-service-2-line ri-lg mb-2"></i>
             <span class="block">الدعم</span>
           </button>
-          <button class="tab-button px-6 py-3 rounded-xl bg-white text-gray-600 shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300" data-tab="team">
+          <button
+            class="tab-button px-6 py-3 rounded-xl bg-white text-gray-600 shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+            data-tab="team"
+          >
             <i class="ri-team-line ri-lg mb-2"></i>
             <span class="block">الفريق</span>
           </button>
@@ -613,22 +841,29 @@
         <div class="tab-content relative">
           <!-- Market Understanding Tab -->
           <div class="tab-pane active" id="market">
-            <div class="bg-gradient-to-br from-primary/5 to-primary/10 rounded-3xl p-8 md:p-12">
+            <div
+              class="bg-gradient-to-br from-primary/5 to-primary/10 rounded-3xl p-8 md:p-12"
+            >
               <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <div class="order-2 md:order-1">
                   <div class="flex items-center gap-4 mb-6">
-                    <div class="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center">
+                    <div
+                      class="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center"
+                    >
                       <i class="ri-map-pin-user-line ri-2x text-primary"></i>
                     </div>
                     <h3 class="text-2xl font-bold">فهم عميق للسوق</h3>
                   </div>
                   <p class="text-gray-600 text-lg leading-relaxed mb-8">
-                    نمتلك فهماً عميقاً للسوق المحلي واحتياجات المستخدمين، مما يمكننا من تقديم حلول مناسبة وفعالة
+                    نمتلك فهماً عميقاً للسوق المحلي واحتياجات المستخدمين، مما
+                    يمكننا من تقديم حلول مناسبة وفعالة
                   </p>
                   <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div class="bg-white rounded-xl p-4 shadow-md">
                       <div class="flex items-center gap-3 mb-2">
-                        <div class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
+                        <div
+                          class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center"
+                        >
                           <i class="ri-line-chart-line text-primary"></i>
                         </div>
                         <h4 class="font-bold">دراسات السوق</h4>
@@ -637,7 +872,9 @@
                     </div>
                     <div class="bg-white rounded-xl p-4 shadow-md">
                       <div class="flex items-center gap-3 mb-2">
-                        <div class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
+                        <div
+                          class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center"
+                        >
                           <i class="ri-focus-3-line text-primary"></i>
                         </div>
                         <h4 class="font-bold">تحليل المنافسين</h4>
@@ -646,11 +883,20 @@
                     </div>
                   </div>
                 </div>
-                <div class="order-1 md:order-2">
-                  <img src="https://readdy.ai/api/search-image?query=market%20analysis%20visualization%20modern%20clean%20professional%20business%20chart&width=600&height=400" 
-                       alt="تحليل السوق" 
-                       class="rounded-2xl shadow-lg w-full"
-                  />
+                <div class="order-1 md:order-2 flex justify-center">
+                  <div class="relative w-80 h-80">
+                    <div
+                      class="absolute inset-0 bg-primary/10 rounded-full animate-spin-slow"
+                    ></div>
+                    <div
+                      class="absolute inset-4 bg-primary/20 rounded-full animate-spin-slow-reverse"
+                    ></div>
+                    <div
+                      class="absolute inset-8 bg-white rounded-full flex items-center justify-center"
+                    >
+                      <i class="ri-map-pin-user-line ri-4x text-primary"></i>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -658,44 +904,64 @@
 
           <!-- Quality Tab -->
           <div class="tab-pane hidden" id="quality">
-            <div class="bg-gradient-to-br from-primary/5 to-primary/10 rounded-3xl p-8 md:p-12">
+            <div
+              class="bg-gradient-to-br from-primary/5 to-primary/10 rounded-3xl p-8 md:p-12"
+            >
               <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <div>
                   <div class="flex items-center gap-4 mb-6">
-                    <div class="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center">
+                    <div
+                      class="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center"
+                    >
                       <i class="ri-award-line ri-2x text-primary"></i>
                     </div>
                     <h3 class="text-2xl font-bold">جودة تنفيذ عالية</h3>
                   </div>
                   <p class="text-gray-600 text-lg leading-relaxed mb-8">
-                    نقدم جودة تنفيذ عالية، مع مرونة تناسب كل مشروع وتلبي متطلباته الخاصة
+                    نقدم جودة تنفيذ عالية، مع مرونة تناسب كل مشروع وتلبي
+                    متطلباته الخاصة
                   </p>
                   <div class="space-y-4">
                     <div class="bg-white rounded-xl p-4 shadow-md">
                       <h4 class="font-bold mb-2">معايير عالمية</h4>
                       <div class="w-full bg-gray-200 rounded-full h-2">
-                        <div class="bg-primary rounded-full h-2" style="width: 95%"></div>
+                        <div
+                          class="bg-primary rounded-full h-2"
+                          style="width: 95%"
+                        ></div>
                       </div>
                     </div>
                     <div class="bg-white rounded-xl p-4 shadow-md">
                       <h4 class="font-bold mb-2">اختبارات شاملة</h4>
                       <div class="w-full bg-gray-200 rounded-full h-2">
-                        <div class="bg-primary rounded-full h-2" style="width: 90%"></div>
+                        <div
+                          class="bg-primary rounded-full h-2"
+                          style="width: 90%"
+                        ></div>
                       </div>
                     </div>
                     <div class="bg-white rounded-xl p-4 shadow-md">
                       <h4 class="font-bold mb-2">تطوير مستمر</h4>
                       <div class="w-full bg-gray-200 rounded-full h-2">
-                        <div class="bg-primary rounded-full h-2" style="width: 85%"></div>
+                        <div
+                          class="bg-primary rounded-full h-2"
+                          style="width: 85%"
+                        ></div>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="flex justify-center">
                   <div class="relative w-80 h-80">
-                    <div class="absolute inset-0 bg-primary/10 rounded-full animate-spin-slow"></div>
-                    <div class="absolute inset-4 bg-primary/20 rounded-full animate-spin-slow-reverse"></div>
-                    <div class="absolute inset-8 bg-white rounded-full flex items-center justify-center">
+                    <div
+                      class="absolute inset-0 bg-primary/10 rounded-full animate-spin-slow"
+                    ></div>
+                    <div
+                      class="absolute inset-4 bg-primary/20 rounded-full animate-spin-slow-reverse"
+                    ></div>
+                    <div
+                      class="absolute inset-8 bg-white rounded-full flex items-center justify-center"
+                    >
                       <i class="ri-award-line ri-4x text-primary"></i>
                     </div>
                   </div>
@@ -706,17 +972,22 @@
 
           <!-- Commitment Tab -->
           <div class="tab-pane hidden" id="commitment">
-            <div class="bg-gradient-to-br from-primary/5 to-primary/10 rounded-3xl p-8 md:p-12">
+            <div
+              class="bg-gradient-to-br from-primary/5 to-primary/10 rounded-3xl p-8 md:p-12"
+            >
               <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <div>
                   <div class="flex items-center gap-4 mb-6">
-                    <div class="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center">
+                    <div
+                      class="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center"
+                    >
                       <i class="ri-time-line ri-2x text-primary"></i>
                     </div>
                     <h3 class="text-2xl font-bold">التزام بالمواعيد</h3>
                   </div>
                   <p class="text-gray-600 text-lg leading-relaxed mb-8">
-                    نلتزم بالوقت دون التفريط في جودة العمل، مع ضمان تسليم المشاريع في موعدها
+                    نلتزم بالوقت دون التفريط في جودة العمل، مع ضمان تسليم
+                    المشاريع في موعدها
                   </p>
                   <div class="space-y-4">
                     <div class="bg-white rounded-xl p-6 shadow-md">
@@ -725,16 +996,27 @@
                         <span class="text-primary font-bold">98%</span>
                       </div>
                       <div class="w-full bg-gray-200 rounded-full h-2">
-                        <div class="bg-primary rounded-full h-2" style="width: 98%"></div>
+                        <div
+                          class="bg-primary rounded-full h-2"
+                          style="width: 98%"
+                        ></div>
                       </div>
                     </div>
                     <div class="grid grid-cols-2 gap-4">
-                      <div class="bg-white rounded-xl p-4 shadow-md text-center">
-                        <div class="text-3xl font-bold text-primary mb-2">+500</div>
+                      <div
+                        class="bg-white rounded-xl p-4 shadow-md text-center"
+                      >
+                        <div class="text-3xl font-bold text-primary mb-2">
+                          +500
+                        </div>
                         <p class="text-gray-600">مشروع مكتمل</p>
                       </div>
-                      <div class="bg-white rounded-xl p-4 shadow-md text-center">
-                        <div class="text-3xl font-bold text-primary mb-2">100%</div>
+                      <div
+                        class="bg-white rounded-xl p-4 shadow-md text-center"
+                      >
+                        <div class="text-3xl font-bold text-primary mb-2">
+                          100%
+                        </div>
                         <p class="text-gray-600">رضا العملاء</p>
                       </div>
                     </div>
@@ -742,11 +1024,17 @@
                 </div>
                 <div class="relative">
                   <div class="aspect-square relative">
-                    <div class="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/5 rounded-full animate-pulse"></div>
-                    <div class="absolute inset-4 bg-white rounded-full flex items-center justify-center">
+                    <div
+                      class="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/5 rounded-full animate-pulse"
+                    ></div>
+                    <div
+                      class="absolute inset-4 bg-white rounded-full flex items-center justify-center"
+                    >
                       <div class="text-center">
                         <i class="ri-timer-line ri-4x text-primary mb-4"></i>
-                        <div class="text-2xl font-bold text-gray-800">دقة في المواعيد</div>
+                        <div class="text-2xl font-bold text-gray-800">
+                          دقة في المواعيد
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -757,43 +1045,60 @@
 
           <!-- Passion Tab -->
           <div class="tab-pane hidden" id="passion">
-            <div class="bg-gradient-to-br from-primary/5 to-primary/10 rounded-3xl p-8 md:p-12">
+            <div
+              class="bg-gradient-to-br from-primary/5 to-primary/10 rounded-3xl p-8 md:p-12"
+            >
               <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <div class="order-2 md:order-1">
                   <div class="flex items-center gap-4 mb-6">
-                    <div class="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center">
+                    <div
+                      class="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center"
+                    >
                       <i class="ri-heart-line ri-2x text-primary"></i>
                     </div>
                     <h3 class="text-2xl font-bold">شغف وتفاني</h3>
                   </div>
                   <p class="text-gray-600 text-lg leading-relaxed mb-8">
-                    نتعامل مع كل مشروع وكأنه مشروعنا الخاص، ونضع كل خبراتنا وإمكانياتنا لإنجاحه
+                    نتعامل مع كل مشروع وكأنه مشروعنا الخاص، ونضع كل خبراتنا
+                    وإمكانياتنا لإنجاحه
                   </p>
                   <div class="grid grid-cols-1 gap-4">
                     <div class="bg-white rounded-xl p-6 shadow-md">
                       <div class="flex items-center gap-4 mb-3">
-                        <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                        <div
+                          class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center"
+                        >
                           <i class="ri-focus-3-line text-primary"></i>
                         </div>
                         <h4 class="font-bold">تركيز على التفاصيل</h4>
                       </div>
-                      <p class="text-gray-600">نهتم بأدق التفاصيل في كل مشروع لضمان أفضل النتائج</p>
+                      <p class="text-gray-600">
+                        نهتم بأدق التفاصيل في كل مشروع لضمان أفضل النتائج
+                      </p>
                     </div>
                     <div class="bg-white rounded-xl p-6 shadow-md">
                       <div class="flex items-center gap-4 mb-3">
-                        <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                        <div
+                          class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center"
+                        >
                           <i class="ri-shield-star-line text-primary"></i>
                         </div>
                         <h4 class="font-bold">التزام بالجودة</h4>
                       </div>
-                      <p class="text-gray-600">نسعى دائماً لتقديم أعلى مستويات الجودة في كل ما نقوم به</p>
+                      <p class="text-gray-600">
+                        نسعى دائماً لتقديم أعلى مستويات الجودة في كل ما نقوم به
+                      </p>
                     </div>
                   </div>
                 </div>
                 <div class="order-1 md:order-2 flex justify-center">
                   <div class="relative w-80 h-80">
-                    <div class="absolute inset-0 bg-gradient-to-br from-red-100 to-primary/5 rounded-full animate-pulse"></div>
-                    <div class="absolute inset-4 bg-white rounded-full flex items-center justify-center">
+                    <div
+                      class="absolute inset-0 bg-gradient-to-br from-red-100 to-primary/5 rounded-full animate-pulse"
+                    ></div>
+                    <div
+                      class="absolute inset-4 bg-white rounded-full flex items-center justify-center"
+                    >
                       <i class="ri-heart-fill ri-4x text-red-500"></i>
                     </div>
                   </div>
@@ -804,17 +1109,24 @@
 
           <!-- Support Tab -->
           <div class="tab-pane hidden" id="support">
-            <div class="bg-gradient-to-br from-primary/5 to-primary/10 rounded-3xl p-8 md:p-12">
+            <div
+              class="bg-gradient-to-br from-primary/5 to-primary/10 rounded-3xl p-8 md:p-12"
+            >
               <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <div>
                   <div class="flex items-center gap-4 mb-6">
-                    <div class="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center">
-                      <i class="ri-customer-service-2-line ri-2x text-primary"></i>
+                    <div
+                      class="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center"
+                    >
+                      <i
+                        class="ri-customer-service-2-line ri-2x text-primary"
+                      ></i>
                     </div>
                     <h3 class="text-2xl font-bold">دعم مستمر</h3>
                   </div>
                   <p class="text-gray-600 text-lg leading-relaxed mb-8">
-                    نواصل دعم عملائنا بعد الإطلاق وننمو معهم باستمرار، ونقدم خدمات متابعة وتطوير مستمرة
+                    نواصل دعم عملائنا بعد الإطلاق وننمو معهم باستمرار، ونقدم
+                    خدمات متابعة وتطوير مستمرة
                   </p>
                   <div class="space-y-6">
                     <div class="bg-white rounded-xl p-6 shadow-md">
@@ -836,7 +1148,9 @@
                     </div>
                     <div class="bg-white rounded-xl p-6 shadow-md">
                       <div class="text-center">
-                        <div class="text-3xl font-bold text-primary mb-2">24/7</div>
+                        <div class="text-3xl font-bold text-primary mb-2">
+                          24/7
+                        </div>
                         <p class="text-gray-600">دعم متواصل</p>
                       </div>
                     </div>
@@ -844,9 +1158,15 @@
                 </div>
                 <div class="flex justify-center">
                   <div class="relative w-80 h-80">
-                    <div class="absolute inset-0 bg-gradient-to-br from-green-100 to-primary/5 rounded-full animate-pulse"></div>
-                    <div class="absolute inset-4 bg-white rounded-full flex items-center justify-center">
-                      <i class="ri-customer-service-2-line ri-4x text-green-500"></i>
+                    <div
+                      class="absolute inset-0 bg-gradient-to-br from-green-100 to-primary/5 rounded-full animate-pulse"
+                    ></div>
+                    <div
+                      class="absolute inset-4 bg-white rounded-full flex items-center justify-center"
+                    >
+                      <i
+                        class="ri-customer-service-2-line ri-4x text-green-500"
+                      ></i>
                     </div>
                   </div>
                 </div>
@@ -856,42 +1176,55 @@
 
           <!-- Team Tab -->
           <div class="tab-pane hidden" id="team">
-            <div class="bg-gradient-to-br from-primary/5 to-primary/10 rounded-3xl p-8 md:p-12">
+            <div
+              class="bg-gradient-to-br from-primary/5 to-primary/10 rounded-3xl p-8 md:p-12"
+            >
               <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <div class="order-2 md:order-1">
                   <div class="flex items-center gap-4 mb-6">
-                    <div class="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center">
+                    <div
+                      class="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center"
+                    >
                       <i class="ri-team-line ri-2x text-primary"></i>
                     </div>
                     <h3 class="text-2xl font-bold">فريق متكامل</h3>
                   </div>
                   <p class="text-gray-600 text-lg leading-relaxed mb-8">
-                    نضم نخبة من الخبراء المتخصصين في مختلف المجالات التقنية لضمان تقديم حلول متكاملة
+                    نضم نخبة من الخبراء المتخصصين في مختلف المجالات التقنية
+                    لضمان تقديم حلول متكاملة
                   </p>
                   <div class="grid grid-cols-2 gap-4">
                     <div class="bg-white rounded-xl p-4 shadow-md text-center">
-                      <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-3">
+                      <div
+                        class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-3"
+                      >
                         <i class="ri-code-s-slash-line text-primary"></i>
                       </div>
                       <h4 class="font-bold mb-1">مطورون محترفون</h4>
                       <p class="text-sm text-gray-600">خبرة +10 سنوات</p>
                     </div>
                     <div class="bg-white rounded-xl p-4 shadow-md text-center">
-                      <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-3">
+                      <div
+                        class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-3"
+                      >
                         <i class="ri-layout-line text-primary"></i>
                       </div>
                       <h4 class="font-bold mb-1">مصممون مبدعون</h4>
                       <p class="text-sm text-gray-600">تصاميم عصرية</p>
                     </div>
                     <div class="bg-white rounded-xl p-4 shadow-md text-center">
-                      <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-3">
+                      <div
+                        class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-3"
+                      >
                         <i class="ri-database-2-line text-primary"></i>
                       </div>
                       <h4 class="font-bold mb-1">خبراء بيانات</h4>
                       <p class="text-sm text-gray-600">تحليل متقدم</p>
                     </div>
                     <div class="bg-white rounded-xl p-4 shadow-md text-center">
-                      <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-3">
+                      <div
+                        class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-3"
+                      >
                         <i class="ri-customer-service-2-line text-primary"></i>
                       </div>
                       <h4 class="font-bold mb-1">دعم فني</h4>
@@ -901,16 +1234,28 @@
                 </div>
                 <div class="order-1 md:order-2">
                   <div class="relative">
-                    <div class="absolute inset-0 bg-gradient-to-br from-blue-100 to-primary/5 rounded-3xl"></div>
+                    <div
+                      class="absolute inset-0 bg-gradient-to-br from-blue-100 to-primary/5 rounded-3xl"
+                    ></div>
                     <div class="relative p-8">
-                      <div class="grid grid-cols-3 gap-4 items-center justify-items-center">
-                        <div class="w-20 h-20 rounded-full bg-white shadow-lg flex items-center justify-center">
-                          <i class="ri-code-s-slash-line ri-2x text-primary"></i>
+                      <div
+                        class="grid grid-cols-3 gap-4 items-center justify-items-center"
+                      >
+                        <div
+                          class="w-20 h-20 rounded-full bg-white shadow-lg flex items-center justify-center"
+                        >
+                          <i
+                            class="ri-code-s-slash-line ri-2x text-primary"
+                          ></i>
                         </div>
-                        <div class="w-20 h-20 rounded-full bg-white shadow-lg flex items-center justify-center">
+                        <div
+                          class="w-20 h-20 rounded-full bg-white shadow-lg flex items-center justify-center"
+                        >
                           <i class="ri-layout-line ri-2x text-primary"></i>
                         </div>
-                        <div class="w-20 h-20 rounded-full bg-white shadow-lg flex items-center justify-center">
+                        <div
+                          class="w-20 h-20 rounded-full bg-white shadow-lg flex items-center justify-center"
+                        >
                           <i class="ri-database-2-line ri-2x text-primary"></i>
                         </div>
                       </div>
@@ -925,12 +1270,20 @@
 
       <style>
         @keyframes spin-slow {
-          from { transform: rotate(0deg); }
-          to { transform: rotate(360deg); }
+          from {
+            transform: rotate(0deg);
+          }
+          to {
+            transform: rotate(360deg);
+          }
         }
         @keyframes spin-slow-reverse {
-          from { transform: rotate(360deg); }
-          to { transform: rotate(0deg); }
+          from {
+            transform: rotate(360deg);
+          }
+          to {
+            transform: rotate(0deg);
+          }
         }
         .animate-spin-slow {
           animation: spin-slow 20s linear infinite;
@@ -939,7 +1292,7 @@
           animation: spin-slow-reverse 15s linear infinite;
         }
         .tab-button.active {
-          background-color: var(--primary-color, #1748FC);
+          background-color: var(--primary-color, #1748fc);
           color: white;
         }
         .tab-pane {
@@ -956,32 +1309,34 @@
       </style>
 
       <script>
-        document.addEventListener('DOMContentLoaded', function() {
-          const tabButtons = document.querySelectorAll('.tab-button');
-          const tabPanes = document.querySelectorAll('.tab-pane');
+        document.addEventListener("DOMContentLoaded", function () {
+          const tabButtons = document.querySelectorAll(".tab-button");
+          const tabPanes = document.querySelectorAll(".tab-pane");
 
           function switchTab(tabId) {
             // Remove active class from all buttons and panes
-            tabButtons.forEach(btn => btn.classList.remove('active'));
-            tabPanes.forEach(pane => {
-              pane.classList.add('hidden');
-              pane.classList.remove('active');
+            tabButtons.forEach((btn) => btn.classList.remove("active"));
+            tabPanes.forEach((pane) => {
+              pane.classList.add("hidden");
+              pane.classList.remove("active");
             });
 
             // Add active class to clicked button and corresponding pane
-            const activeButton = document.querySelector(`[data-tab="${tabId}"]`);
+            const activeButton = document.querySelector(
+              `[data-tab="${tabId}"]`
+            );
             const activePane = document.getElementById(tabId);
-            
-            activeButton.classList.add('active');
-            activePane.classList.remove('hidden');
+
+            activeButton.classList.add("active");
+            activePane.classList.remove("hidden");
             setTimeout(() => {
-              activePane.classList.add('active');
+              activePane.classList.add("active");
             }, 50);
           }
 
-          tabButtons.forEach(button => {
-            button.addEventListener('click', () => {
-              const tabId = button.getAttribute('data-tab');
+          tabButtons.forEach((button) => {
+            button.addEventListener("click", () => {
+              const tabId = button.getAttribute("data-tab");
               switchTab(tabId);
             });
           });
@@ -1116,9 +1471,7 @@
             >
               <i class="ri-exchange-funds-line ri-xl text-primary"></i>
             </div>
-            <h3 class="text-xl font-bold text-center mb-4">
-              خدمات التكامل
-            </h3>
+            <h3 class="text-xl font-bold text-center mb-4">خدمات التكامل</h3>
             <p class="text-gray-600 text-center mb-6">
               التكامل مع خدمات الدفع، الرسائل، الإشعارات، التحليلات، وغيرها
             </p>
@@ -1233,7 +1586,9 @@
         <div class="bg-white rounded-2xl shadow-lg overflow-hidden mb-12">
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-0">
             <div class="p-8 lg:p-12">
-              <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-6">
+              <div
+                class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-6"
+              >
                 <i class="ri-heart-pulse-line ri-xl text-primary"></i>
               </div>
               <h3 class="text-2xl font-bold mb-4">تطبيقات طبية وعيادات ذكية</h3>
@@ -1256,11 +1611,19 @@
                 </div>
               </div>
             </div>
-            <div class="bg-gradient-to-br from-primary/5 to-primary/10 p-8 lg:p-12 flex items-center justify-center">
-              <img src="https://readdy.ai/api/search-image?query=medical%20app%20interface%20modern%20arabic%20clean%20design&width=600&height=400" 
-                   alt="تطبيقات طبية" 
-                   class="rounded-xl shadow-lg max-w-md w-full"
-              />
+            <div
+              class="bg-gradient-to-br from-primary/5 to-primary/10 p-8 lg:p-12 flex items-center justify-center"
+            >
+              <div class="relative w-80 h-80">
+                <div
+                  class="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/5 rounded-full animate-pulse"
+                ></div>
+                <div
+                  class="absolute inset-4 bg-white rounded-full flex items-center justify-center"
+                >
+                  <i class="ri-heart-pulse-line ri-4x text-primary"></i>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -1268,9 +1631,13 @@
         <!-- Other Projects Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
           <!-- Project 2 - Right Image -->
-          <div class="bg-white rounded-xl p-8 flex flex-col md:flex-row items-center gap-6">
+          <div
+            class="bg-white rounded-xl p-8 flex flex-col md:flex-row items-center gap-6"
+          >
             <div class="flex-1">
-              <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+              <div
+                class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4"
+              >
                 <i class="ri-truck-line ri-lg text-primary"></i>
               </div>
               <h3 class="text-xl font-bold mb-3">منصات توصيل وخدمات لوجستية</h3>
@@ -1278,31 +1645,53 @@
                 حلول متكاملة لإدارة خدمات التوصيل والخدمات اللوجستية
               </p>
               <div class="flex flex-wrap gap-2">
-                <span class="px-3 py-1 bg-primary/5 text-primary rounded-full text-sm">تتبع الطلبات</span>
-                <span class="px-3 py-1 bg-primary/5 text-primary rounded-full text-sm">إدارة المندوبين</span>
+                <span
+                  class="px-3 py-1 bg-primary/5 text-primary rounded-full text-sm"
+                  >تتبع الطلبات</span
+                >
+                <span
+                  class="px-3 py-1 bg-primary/5 text-primary rounded-full text-sm"
+                  >إدارة المندوبين</span
+                >
               </div>
             </div>
-            <div class="w-full md:w-40 h-40 bg-primary/5 rounded-xl flex items-center justify-center">
+            <div
+              class="w-full md:w-40 h-40 bg-primary/5 rounded-xl flex items-center justify-center"
+            >
               <i class="ri-truck-line ri-3x text-primary"></i>
             </div>
           </div>
 
           <!-- Project 3 - Left Image -->
-          <div class="bg-white rounded-xl p-8 flex flex-col md:flex-row-reverse items-center gap-6">
+          <div
+            class="bg-white rounded-xl p-8 flex flex-col md:flex-row-reverse items-center gap-6"
+          >
             <div class="flex-1">
-              <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+              <div
+                class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4"
+              >
                 <i class="ri-calendar-check-line ri-lg text-primary"></i>
               </div>
-              <h3 class="text-xl font-bold mb-3">أنظمة حجوزات ومدفوعات إلكترونية</h3>
+              <h3 class="text-xl font-bold mb-3">
+                أنظمة حجوزات ومدفوعات إلكترونية
+              </h3>
               <p class="text-gray-600 mb-4">
                 منصات متطورة للحجوزات والمدفوعات الإلكترونية
               </p>
               <div class="flex flex-wrap gap-2">
-                <span class="px-3 py-1 bg-primary/5 text-primary rounded-full text-sm">دفع إلكتروني</span>
-                <span class="px-3 py-1 bg-primary/5 text-primary rounded-full text-sm">حجز متقدم</span>
+                <span
+                  class="px-3 py-1 bg-primary/5 text-primary rounded-full text-sm"
+                  >دفع إلكتروني</span
+                >
+                <span
+                  class="px-3 py-1 bg-primary/5 text-primary rounded-full text-sm"
+                  >حجز متقدم</span
+                >
               </div>
             </div>
-            <div class="w-full md:w-40 h-40 bg-primary/5 rounded-xl flex items-center justify-center">
+            <div
+              class="w-full md:w-40 h-40 bg-primary/5 rounded-xl flex items-center justify-center"
+            >
               <i class="ri-calendar-check-line ri-3x text-primary"></i>
             </div>
           </div>
@@ -1311,163 +1700,41 @@
           <div class="bg-white rounded-xl p-8 md:col-span-2">
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
               <div class="lg:col-span-2">
-                <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                <div
+                  class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4"
+                >
                   <i class="ri-store-3-line ri-lg text-primary"></i>
                 </div>
-                <h3 class="text-xl font-bold mb-3">تطبيقات تجارية للسوق السعودي</h3>
+                <h3 class="text-xl font-bold mb-3">
+                  تطبيقات تجارية للسوق السعودي
+                </h3>
                 <p class="text-gray-600 mb-4">
-                  تطبيقات وحلول تجارية مخصصة للسوق السعودي والخليجي، مع مراعاة المتطلبات المحلية
+                  تطبيقات وحلول تجارية مخصصة للسوق السعودي والخليجي، مع مراعاة
+                  المتطلبات المحلية
                 </p>
                 <div class="flex flex-wrap gap-2">
-                  <span class="px-3 py-1 bg-primary/5 text-primary rounded-full text-sm">دعم اللغة العربية</span>
-                  <span class="px-3 py-1 bg-primary/5 text-primary rounded-full text-sm">تكامل محلي</span>
-                  <span class="px-3 py-1 bg-primary/5 text-primary rounded-full text-sm">دعم العملات المحلية</span>
+                  <span
+                    class="px-3 py-1 bg-primary/5 text-primary rounded-full text-sm"
+                    >دعم اللغة العربية</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-primary/5 text-primary rounded-full text-sm"
+                    >تكامل محلي</span
+                  >
+                  <span
+                    class="px-3 py-1 bg-primary/5 text-primary rounded-full text-sm"
+                    >دعم العملات المحلية</span
+                  >
                 </div>
               </div>
-              <div class="w-full h-48 bg-gradient-to-br from-primary/5 to-primary/10 rounded-xl flex items-center justify-center">
+              <div
+                class="w-full h-48 bg-gradient-to-br from-primary/5 to-primary/10 rounded-xl flex items-center justify-center"
+              >
                 <i class="ri-store-3-line ri-4x text-primary"></i>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-    <!-- Success Stories Section -->
-    <section id="success-stories" class="py-20 px-6 bg-white">
-      <div class="max-w-7xl mx-auto">
-        <div class="text-center mb-16">
-          <span class="text-primary font-medium">قصص نجاح</span>
-          <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-4">
-            مشاريع ناجحة أنجزناها
-          </h2>
-          <p class="text-gray-600 max-w-2xl mx-auto">
-            نفخر بالنتائج المتميزة التي حققناها لعملائنا من خلال خدماتنا
-            المتنوعة
-          </p>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <!-- Success Story 1 -->
-          <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
-            <div class="h-48 overflow-hidden">
-              <img
-                src="https://readdy.ai/api/search-image?query=modern%2520e-commerce%2520website%2520on%2520laptop%2520screen%252C%2520professional%2520online%2520store%2520interface%252C%2520clean%2520design%252C%2520product%2520showcase%252C%2520Arabic%2520interface%252C%2520high%2520quality%2520e-commerce%2520platform%2520visualization&width=600&height=400&seq=ecommerce1&orientation=landscape"
-                alt="متجر إلكتروني"
-                class="w-full h-full object-cover object-top"
-              />
-            </div>
-            <div class="p-6">
-              <div class="flex items-center justify-between mb-4">
-                <h3 class="text-xl font-bold">متجر الأناقة</h3>
-                <span
-                  class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full"
-                  >تطوير مواقع</span
-                >
-              </div>
-              <p class="text-gray-600 mb-4">
-                تطوير متجر إلكتروني متكامل مع نظام إدارة مخزون وبوابة دفع آمنة،
-                مما أدى إلى زيادة المبيعات بنسبة 120% خلال 6 أشهر.
-              </p>
-              <div class="flex items-center justify-between">
-                <div class="flex items-center gap-2">
-                  <div
-                    class="w-8 h-8 rounded-full bg-green-500/10 flex items-center justify-center"
-                  >
-                    <i class="ri-check-line ri-sm text-green-500"></i>
-                  </div>
-                  <span class="text-sm text-gray-700">زيادة المبيعات 120%</span>
-                </div>
-                <a
-                  href="#"
-                  class="text-primary hover:text-primary/80 transition-colors text-sm"
-                  >التفاصيل</a
-                >
-              </div>
-            </div>
-          </div>
-          <!-- Success Story 2 -->
-          <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
-            <div class="h-48 overflow-hidden">
-              <img
-                src="https://readdy.ai/api/search-image?query=digital%2520marketing%2520campaign%2520results%2520on%2520screen%252C%2520analytics%2520dashboard%2520showing%2520positive%2520growth%252C%2520social%2520media%2520marketing%2520visualization%252C%2520professional%2520marketing%2520results%2520display%252C%2520clean%2520interface%2520with%2520charts%2520and%2520graphs&width=600&height=400&seq=marketing2&orientation=landscape"
-                alt="حملة تسويقية"
-                class="w-full h-full object-cover object-top"
-              />
-            </div>
-            <div class="p-6">
-              <div class="flex items-center justify-between mb-4">
-                <h3 class="text-xl font-bold">شركة المستقبل</h3>
-                <span
-                  class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full"
-                  >تسويق رقمي</span
-                >
-              </div>
-              <p class="text-gray-600 mb-4">
-                إدارة حملة تسويقية متكاملة شملت تحسين محركات البحث وإعلانات
-                مدفوعة، مما أدى إلى زيادة الزيارات بنسبة 85% وتحسين التحويلات.
-              </p>
-              <div class="flex items-center justify-between">
-                <div class="flex items-center gap-2">
-                  <div
-                    class="w-8 h-8 rounded-full bg-green-500/10 flex items-center justify-center"
-                  >
-                    <i class="ri-check-line ri-sm text-green-500"></i>
-                  </div>
-                  <span class="text-sm text-gray-700">زيادة التحويلات 65%</span>
-                </div>
-                <a
-                  href="#"
-                  class="text-primary hover:text-primary/80 transition-colors text-sm"
-                  >التفاصيل</a
-                >
-              </div>
-            </div>
-          </div>
-          <!-- Success Story 3 -->
-          <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
-            <div class="h-48 overflow-hidden">
-              <img
-                src="https://readdy.ai/api/search-image?query=AI%2520chatbot%2520interface%2520on%2520mobile%2520device%252C%2520customer%2520service%2520automation%252C%2520Arabic%2520language%2520interface%252C%2520professional%2520chatbot%2520design%252C%2520clean%2520modern%2520messaging%2520app%2520with%2520AI%2520assistant%252C%2520high%2520quality%2520visualization&width=600&height=400&seq=chatbot1&orientation=landscape"
-                alt="روبوت محادثة"
-                class="w-full h-full object-cover object-top"
-              />
-            </div>
-            <div class="p-6">
-              <div class="flex items-center justify-between mb-4">
-                <h3 class="text-xl font-bold">بنك الخليج</h3>
-                <span
-                  class="bg-pink-100 text-pink-800 text-xs font-medium px-2.5 py-0.5 rounded-full"
-                  >ذكاء اصطناعي</span
-                >
-              </div>
-              <p class="text-gray-600 mb-4">
-                تطوير روبوت محادثة ذكي لخدمة العملاء على مدار الساعة، مما أدى
-                إلى تقليل وقت الانتظار بنسبة 40% وتحسين تجربة العملاء.
-              </p>
-              <div class="flex items-center justify-between">
-                <div class="flex items-center gap-2">
-                  <div
-                    class="w-8 h-8 rounded-full bg-green-500/10 flex items-center justify-center"
-                  >
-                    <i class="ri-check-line ri-sm text-green-500"></i>
-                  </div>
-                  <span class="text-sm text-gray-700">رضا العملاء 92%</span>
-                </div>
-                <a
-                  href="#"
-                  class="text-primary hover:text-primary/80 transition-colors text-sm"
-                  >التفاصيل</a
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- <div class="flex justify-center mt-12">
-          <a
-            href="#"
-            class="inline-block py-3 px-8 bg-white border border-primary text-primary rounded-lg transition-colors duration-300 hover:bg-primary hover:text-white !rounded-button whitespace-nowrap"
-            >عرض المزيد من المشاريع</a
-          >
-        </div> -->
       </div>
     </section>
     <!-- Stats Section -->
@@ -1493,46 +1760,62 @@
         </div>
       </div>
     </section>
-       <!-- Partners Section -->
-       <section class="py-20 px-6 bg-white">
-        <div class="max-w-7xl mx-auto">
-          <div class="text-center mb-16 opacity-0 feature-fade-in">
-            <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-6">شركاؤنا</h2>
-            <p class="text-gray-600 text-xl mb-12">نحن نعمل جنبًا إلى جنب مع:</p>
+    <!-- Partners Section -->
+    <section class="py-20 px-6 bg-white">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16 opacity-0 feature-fade-in">
+          <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-6">شركاؤنا</h2>
+          <p class="text-gray-600 text-xl mb-12">نحن نعمل جنبًا إلى جنب مع:</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+          <div
+            class="bg-gray-50 p-6 rounded-xl text-center hover:shadow-lg transition-all duration-300"
+          >
+            <div
+              class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4 mx-auto"
+            >
+              <i class="ri-building-2-line ri-2x text-primary"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-2">شركات سعودية وخليجية</h3>
           </div>
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-            <div class="bg-gray-50 p-6 rounded-xl text-center hover:shadow-lg transition-all duration-300">
-              <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4 mx-auto">
-                <i class="ri-building-2-line ri-2x text-primary"></i>
-              </div>
-              <h3 class="text-xl font-bold mb-2">شركات سعودية وخليجية</h3>
+          <div
+            class="bg-gray-50 p-6 rounded-xl text-center hover:shadow-lg transition-all duration-300"
+          >
+            <div
+              class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4 mx-auto"
+            >
+              <i class="ri-government-line ri-2x text-primary"></i>
             </div>
-            <div class="bg-gray-50 p-6 rounded-xl text-center hover:shadow-lg transition-all duration-300">
-              <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4 mx-auto">
-                <i class="ri-government-line ri-2x text-primary"></i>
-              </div>
-              <h3 class="text-xl font-bold mb-2">جهات حكومية وخاصة</h3>
-            </div>
-            <div class="bg-gray-50 p-6 rounded-xl text-center hover:shadow-lg transition-all duration-300">
-              <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4 mx-auto">
-                <i class="ri-rocket-line ri-2x text-primary"></i>
-              </div>
-              <h3 class="text-xl font-bold mb-2">رواد أعمال وشركات ناشئة</h3>
-            </div>
-            <div class="bg-gray-50 p-6 rounded-xl text-center hover:shadow-lg transition-all duration-300">
-              <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4 mx-auto">
-                <i class="ri-hospital-line ri-2x text-primary"></i>
-              </div>
-              <h3 class="text-xl font-bold mb-2">مؤسسات تعليمية وطبية وخدمية</h3>
-            </div>
+            <h3 class="text-xl font-bold mb-2">جهات حكومية وخاصة</h3>
           </div>
-          <div class="text-center">
-            <p class="text-gray-600 text-lg max-w-3xl mx-auto">
-              ونُقدّم لهم الدعم التقني الكامل، من التأسيس وحتى التوسع.
-            </p>
+          <div
+            class="bg-gray-50 p-6 rounded-xl text-center hover:shadow-lg transition-all duration-300"
+          >
+            <div
+              class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4 mx-auto"
+            >
+              <i class="ri-rocket-line ri-2x text-primary"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-2">رواد أعمال وشركات ناشئة</h3>
+          </div>
+          <div
+            class="bg-gray-50 p-6 rounded-xl text-center hover:shadow-lg transition-all duration-300"
+          >
+            <div
+              class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4 mx-auto"
+            >
+              <i class="ri-hospital-line ri-2x text-primary"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-2">مؤسسات تعليمية وطبية وخدمية</h3>
           </div>
         </div>
-      </section>
+        <div class="text-center">
+          <p class="text-gray-600 text-lg max-w-3xl mx-auto">
+            ونُقدّم لهم الدعم التقني الكامل، من التأسيس وحتى التوسع.
+          </p>
+        </div>
+      </div>
+    </section>
     <!-- Testimonials Section -->
     <section class="py-20 px-6 bg-gray-50">
       <div class="max-w-7xl mx-auto">
@@ -1916,7 +2199,7 @@
             >تواصل معنا</a
           >
           <a
-            href="#"
+            href="#services"
             class="btn-hover bg-primary/20 text-white border border-white px-8 py-3 rounded-full font-medium !rounded-button whitespace-nowrap"
             >خدماتنا</a
           >
@@ -1929,11 +2212,7 @@
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
           <div class="md:col-span-1">
             <a href="#" class="inline-block mb-6">
-              <img
-                src="assets/yass logo-05.png"
-                alt="YAS Logo"
-                class="h-16"
-              />
+              <img src="assets/yass logo-05.png" alt="YAS Logo" class="h-16" />
             </a>
             <p class="text-gray-400 mb-6">
               شركة رائدة في مجال تقديم الحلول التقنية المتكاملة للشركات
@@ -2092,47 +2371,52 @@
     <script src="js/main.js"></script>
     <script>
       // Add smooth scrolling behavior
-      document.addEventListener('DOMContentLoaded', function() {
+      document.addEventListener("DOMContentLoaded", function () {
         // Get all navigation links
         const navLinks = document.querySelectorAll('a[href^="#"]');
-        
-        navLinks.forEach(link => {
-          link.addEventListener('click', function(e) {
+
+        navLinks.forEach((link) => {
+          link.addEventListener("click", function (e) {
             e.preventDefault();
-            
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return; // Skip if it's just "#"
-            
+
+            const targetId = this.getAttribute("href");
+            if (targetId === "#") return; // Skip if it's just "#"
+
             const targetElement = document.querySelector(targetId);
-            const navHeight = document.getElementById('mainNav').offsetHeight;
-            
+            const navHeight = document.getElementById("mainNav").offsetHeight;
+
             if (targetElement) {
               const targetPosition = targetElement.offsetTop - navHeight;
               window.scrollTo({
                 top: targetPosition,
-                behavior: 'smooth'
+                behavior: "smooth",
               });
             }
           });
         });
 
         // Highlight active section in navigation
-        const sections = document.querySelectorAll('section[id]');
-        const navItems = document.querySelectorAll('.nav-link, .nav-link-mobile');
-        
+        const sections = document.querySelectorAll("section[id]");
+        const navItems = document.querySelectorAll(
+          ".nav-link, .nav-link-mobile"
+        );
+
         function highlightNavigation() {
           const scrollPosition = window.scrollY + window.innerHeight / 3;
-          
-          sections.forEach(section => {
+
+          sections.forEach((section) => {
             const sectionTop = section.offsetTop;
             const sectionBottom = sectionTop + section.offsetHeight;
-            const sectionId = section.getAttribute('id');
-            
-            if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-              navItems.forEach(item => {
-                item.classList.remove('text-primary');
-                if (item.getAttribute('href') === `#${sectionId}`) {
-                  item.classList.add('text-primary');
+            const sectionId = section.getAttribute("id");
+
+            if (
+              scrollPosition >= sectionTop &&
+              scrollPosition < sectionBottom
+            ) {
+              navItems.forEach((item) => {
+                item.classList.remove("text-primary");
+                if (item.getAttribute("href") === `#${sectionId}`) {
+                  item.classList.add("text-primary");
                 }
               });
             }
@@ -2141,9 +2425,9 @@
 
         // Initial highlight check
         highlightNavigation();
-        
+
         // Update highlight on scroll
-        window.addEventListener('scroll', highlightNavigation);
+        window.addEventListener("scroll", highlightNavigation);
       });
     </script>
   </body>

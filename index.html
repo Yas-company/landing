@@ -44,10 +44,10 @@
   </head>
   <body class="bg-gray-50 text-gray-800">
     <!-- Navigation -->
-    <nav class="fixed w-full top-0 right-0 z-50 px-6 py-4">
+    <nav class="fixed w-full top-0 right-0 z-50 px-6 py-4 transition-all duration-300" id="mainNav">
       <div class="max-w-6xl mx-auto">
         <div
-          class="bg-white/10 backdrop-blur-md rounded-full border border-white/10 shadow-lg shadow-black/5 px-6 py-3 flex items-center justify-between"
+          class="nav-container bg-white/10 backdrop-blur-md rounded-full border border-white/20 shadow-lg shadow-black/5 px-6 py-3 flex items-center justify-between transition-all duration-300"
         >
           <a href="#" class="flex items-center">
             <img
@@ -59,130 +59,306 @@
           <div class="hidden md:flex-1 md:flex items-center justify-center">
             <div class="flex items-center space-x-8">
               <a
+                href="#about"
+                class="nav-link text-white hover:text-primary transition-all duration-300 mx-4"
+                >من نحن</a
+              >
+              <a
                 href="#services"
-                class="text-gray-700 hover:text-primary transition-all duration-300 mx-4"
+                class="nav-link text-white hover:text-primary transition-all duration-300 mx-4"
                 >خدماتنا</a
               >
               <a
+                href="#how-we-work"
+                class="nav-link text-white hover:text-primary transition-all duration-300 mx-4"
+                >كيف نعمل</a
+              >
+              <a
+                href="#achievements"
+                class="nav-link text-white hover:text-primary transition-all duration-300 mx-4"
+                >إنجازاتنا</a
+              >
+              <a
+                href="#success-stories"
+                class="nav-link text-white hover:text-primary transition-all duration-300 mx-4"
+                >قصص النجاح</a
+              >
+              <a
                 href="#contact-section"
-                class="text-gray-700 hover:text-primary transition-all duration-300 mx-4"
+                class="nav-link text-white hover:text-primary transition-all duration-300 mx-4"
                 >تواصل معنا</a
-              >
-              <a
-                href="#faq-container"
-                class="text-gray-700 hover:text-primary transition-all duration-300 mx-4"
-                >الأسئلة الشائعة</a
-              >
-              <a
-                href="#"
-                class="text-gray-700 hover:text-primary transition-all duration-300 mx-4"
-                >المشاريع</a
               >
             </div>
           </div>
           <a
             href="#contact-section"
-            class="hidden md:inline-block px-8 py-2.5 bg-gradient-to-r from-primary to-secondary hover:from-primary hover:to-secondary rounded-full text-white font-medium transition-all duration-300 shadow-[0_0_20px_rgba(23,72,252,0.3)] hover:shadow-[0_0_25px_rgba(23,72,252,0.4)] hover:scale-105 !rounded-button whitespace-nowrap"
+            class="nav-cta hidden md:inline-block px-8 py-2.5 bg-gradient-to-r from-primary to-blue-600 hover:from-primary hover:to-primary rounded-full text-white font-medium transition-all duration-300 shadow-[0_0_20px_rgba(23,72,252,0.3)] hover:shadow-[0_0_25px_rgba(23,72,252,0.4)] hover:scale-105 !rounded-button whitespace-nowrap"
             >ابدأ الآن</a
           >
+          <!-- Mobile Menu Button -->
           <button
-            class="md:hidden w-10 h-10 flex items-center justify-center text-gray-700"
+            class="nav-menu-btn md:hidden w-10 h-10 flex items-center justify-center text-white hover:text-primary transition-colors"
+            id="mobileMenuBtn"
           >
             <i class="ri-menu-line ri-lg"></i>
           </button>
         </div>
-      </div>
-    </nav>
-    <!-- Hero Section -->
-    <section class="pt-32 pb-20 px-6 relative overflow-hidden">
-      <div class="absolute inset-0 z-0">
-        <img
-          src="https://readdy.ai/api/search-image?query=futuristic%20technology%20visualization%20with%20floating%20digital%20elements%2C%20circuit%20board%20patterns%2C%20glowing%20tech%20particles%2C%20modern%20abstract%203D%20geometric%20shapes%2C%20blue%20and%20white%20color%20scheme%2C%20clean%20professional%20tech%20background%2C%20high-end%20digital%20transformation%20concept%2C%20subtle%20cyber%20elements%2C%20advanced%20technology%20atmosphere&width=1920&height=800&seq=hero4&orientation=landscape"
-          alt="Hero Background"
-          class="w-full h-full object-cover object-center"
-        />
-      </div>
-      <div
-        class="absolute inset-0 bg-gradient-to-l from-white/95 via-white/90 to-transparent z-10"
-      ></div>
-      <div class="max-w-7xl mx-auto relative z-20">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div class="text-right">
-            <h1 class="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
-              خدماتنا المتميزة
-            </h1>
-            <p class="text-xl text-gray-700 mb-8">
-              نقدم مجموعة متكاملة من الحلول التقنية المبتكرة لتلبية احتياجات
-              عملائنا وتحقيق أهدافهم بكفاءة عالية وجودة متميزة.
-            </p>
-            <div class="flex flex-wrap gap-4 justify-start">
+
+        <!-- Mobile Menu -->
+        <div class="md:hidden" id="mobileMenu">
+          <div class="nav-mobile-container hidden bg-white/95 backdrop-blur-md mt-4 rounded-2xl border border-white/20 shadow-lg shadow-black/5 p-4 transition-all duration-300">
+            <div class="flex flex-col space-y-4">
+              <a
+                href="#about"
+                class="nav-link-mobile text-gray-700 hover:text-primary transition-all duration-300 px-4 py-2 rounded-lg hover:bg-primary/5"
+                >من نحن</a
+              >
               <a
                 href="#services"
-                class="btn-hover bg-primary text-white px-8 py-3 rounded-full font-medium shadow-lg !rounded-button whitespace-nowrap"
-                >استكشف خدماتنا</a
+                class="nav-link-mobile text-gray-700 hover:text-primary transition-all duration-300 px-4 py-2 rounded-lg hover:bg-primary/5"
+                >خدماتنا</a
+              >
+              <a
+                href="#how-we-work"
+                class="nav-link-mobile text-gray-700 hover:text-primary transition-all duration-300 px-4 py-2 rounded-lg hover:bg-primary/5"
+                >كيف نعمل</a
+              >
+              <a
+                href="#achievements"
+                class="nav-link-mobile text-gray-700 hover:text-primary transition-all duration-300 px-4 py-2 rounded-lg hover:bg-primary/5"
+                >إنجازاتنا</a
+              >
+              <a
+                href="#success-stories"
+                class="nav-link-mobile text-gray-700 hover:text-primary transition-all duration-300 px-4 py-2 rounded-lg hover:bg-primary/5"
+                >قصص النجاح</a
               >
               <a
                 href="#contact-section"
-                class="flex items-center gap-2 text-primary font-medium hover:text-primary/80 transition-colors"
+                class="nav-link-mobile text-gray-700 hover:text-primary transition-all duration-300 px-4 py-2 rounded-lg hover:bg-primary/5"
+                >تواصل معنا</a
               >
-                <span>تواصل معنا</span>
-                <i class="ri-arrow-left-line ri-lg"></i>
+              <a
+                href="#contact-section"
+                class="bg-gradient-to-r from-primary to-blue-600 hover:from-primary hover:to-primary text-white font-medium px-4 py-2 rounded-lg text-center transition-all duration-300 hover:shadow-lg"
+                >ابدأ الآن</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <script>
+      // Navbar scroll behavior
+      document.addEventListener('DOMContentLoaded', function() {
+        const nav = document.getElementById('mainNav');
+        const navContainer = nav.querySelector('.nav-container');
+        const navLinks = nav.querySelectorAll('.nav-link');
+        const navMenuBtn = nav.querySelector('.nav-menu-btn');
+        const heroSection = document.querySelector('section'); // First section is hero
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenuContainer = document.querySelector('.nav-mobile-container');
+        
+        // Mobile menu toggle
+        mobileMenuBtn.addEventListener('click', () => {
+          mobileMenuContainer.classList.toggle('hidden');
+          const isOpen = !mobileMenuContainer.classList.contains('hidden');
+          mobileMenuBtn.innerHTML = isOpen ? '<i class="ri-close-line ri-lg"></i>' : '<i class="ri-menu-line ri-lg"></i>';
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-link-mobile').forEach(link => {
+          link.addEventListener('click', () => {
+            mobileMenuContainer.classList.add('hidden');
+            mobileMenuBtn.innerHTML = '<i class="ri-menu-line ri-lg"></i>';
+          });
+        });
+        
+        const updateNavbar = () => {
+          const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+          const scrollPosition = window.scrollY;
+          
+          if (scrollPosition > heroBottom - nav.offsetHeight) {
+            // Past hero section - light background style
+            navContainer.classList.remove('bg-white/10', 'border-white/20');
+            navContainer.classList.add('bg-white', 'border-gray-100');
+            navLinks.forEach(link => {
+              link.classList.remove('text-white');
+              link.classList.add('text-gray-700');
+            });
+            navMenuBtn.classList.remove('text-white');
+            navMenuBtn.classList.add('text-gray-700');
+          } else {
+            // On hero section - transparent style
+            navContainer.classList.add('bg-white/10', 'border-white/20');
+            navContainer.classList.remove('bg-white', 'border-gray-100');
+            navLinks.forEach(link => {
+              link.classList.add('text-white');
+              link.classList.remove('text-gray-700');
+            });
+            navMenuBtn.classList.add('text-white');
+            navMenuBtn.classList.remove('text-gray-700');
+          }
+        };
+
+        // Initial check
+        updateNavbar();
+        
+        // Update on scroll
+        window.addEventListener('scroll', updateNavbar);
+        
+        // Update on resize
+        window.addEventListener('resize', updateNavbar);
+
+        // Close mobile menu on window resize if open
+        window.addEventListener('resize', () => {
+          if (window.innerWidth >= 768) { // md breakpoint
+            mobileMenuContainer.classList.add('hidden');
+            mobileMenuBtn.innerHTML = '<i class="ri-menu-line ri-lg"></i>';
+          }
+        });
+      });
+    </script>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center relative overflow-hidden bg-gradient-to-br from-gray-900 to-gray-800">
+      <!-- Animated Background Elements -->
+      <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        <div class="absolute inset-0 opacity-20">
+          <div class="absolute inset-0 bg-[linear-gradient(to_right,#ffffff12_1px,transparent_1px),linear-gradient(to_bottom,#ffffff12_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
+        </div>
+        <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-primary/10 via-transparent to-transparent"></div>
+      </div>
+
+      <div class="container mx-auto px-6 relative z-10 pt-20">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div class="text-right">
+            <div class="inline-block mb-6">
+              <div class="flex items-center gap-2 text-primary/80 bg-primary/5 rounded-full py-2 px-4 border border-primary/10">
+                <span class="text-sm font-medium">نرحب بأفكاركم المبتكرة</span>
+                <div class="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
+              </div>
+            </div>
+            
+            <h1 class="text-5xl lg:text-6xl font-bold mb-6 text-white">
+              نحوّل أفكارك إلى
+              <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-blue-400 to-primary">منتجات رقمية متميزة</span>
+            </h1>
+
+            <div class="space-y-6 text-lg text-gray-300 mb-8">
+              <p class="leading-relaxed">
+                في YAS، لا ننتظر أن تصلنا الأفكار مكتملة؛ بل نأخذ رؤية العميل وفكرته، ونحوّلها بخبراتنا التقنية والإبداعية إلى منتج رقمي فعّال، متكامل، وجاهز للنمو — حتى وإن كانت في صورتها الأولية، أو مجرد حاجة في السوق.
+              </p>
+              <p class="leading-relaxed font-medium text-primary">
+                نجاح العميل هو نجاحنا؛ لذا لا نكتفي بالتنفيذ فقط، بل نشاركه بناء النجاح.
+              </p>
+            </div>
+
+            <div class="flex flex-wrap gap-4 justify-start">
+              <a href="#services" 
+                class="group relative inline-flex items-center justify-center px-8 py-3 font-medium text-white transition-all duration-200 ease-in-out rounded-full overflow-hidden hover:scale-105">
+                <div class="absolute inset-0 bg-gradient-to-r from-primary to-blue-600 transition-all duration-200 group-hover:scale-110"></div>
+                <div class="relative flex items-center gap-2">
+                  استكشف خدماتنا
+                  <i class="ri-arrow-left-line opacity-70 group-hover:translate-x-1 transition-transform"></i>
+                </div>
               </a>
+              <a href="#contact-section" 
+                class="inline-flex items-center gap-2 text-white/80 hover:text-primary transition-colors group">
+                <span>تواصل معنا</span>
+                <i class="ri-arrow-left-line group-hover:translate-x-1 transition-transform"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Animated Elements -->
+          <div class="relative hidden lg:block">
+            <div class="absolute -inset-4 bg-gradient-to-br from-primary/20 to-transparent rounded-full animate-pulse"></div>
+            <div class="relative rounded-full p-8">
+              <!-- Floating Elements -->
+              <div class="absolute top-0 left-0 w-20 h-20 bg-gradient-to-br from-primary/20 to-transparent rounded-full animate-float" style="animation-delay: 0s;"></div>
+              <div class="absolute top-1/4 right-0 w-16 h-16 bg-gradient-to-br from-blue-400/20 to-transparent rounded-full animate-float" style="animation-delay: 0.5s;"></div>
+              <div class="absolute bottom-0 left-1/4 w-24 h-24 bg-gradient-to-br from-primary/30 to-transparent rounded-full animate-float" style="animation-delay: 1s;"></div>
+              
+              <!-- Tech Pattern -->
+              <div class="relative w-full aspect-square rounded-full border border-primary/20 p-8 backdrop-blur-sm bg-white/5">
+                <div class="absolute inset-0 bg-[linear-gradient(to_right,#ffffff12_1px,transparent_1px),linear-gradient(to_bottom,#ffffff12_1px,transparent_1px)] bg-[size:2rem_2rem] rounded-full"></div>
+                <div class="h-full rounded-full border border-primary/20 flex items-center justify-center">
+                  <div class="text-6xl text-primary">YAS</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
+
     <!-- About Us Section -->
-    <section class="py-20 px-6 bg-white">
-      <div class="max-w-7xl mx-auto">
-        <div class="grid grid-cols-1 gap-12 items-center">
-          <div>
-            <span class="text-primary font-medium">من نحن؟</span>
-            <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-6">
-              شريكك التقني الموثوق
-            </h2>
-            <p class="text-gray-600 mb-8 text-lg leading-relaxed">
-              YAS هي شركة تقنية سعودية، متخصصة في تطوير الحلول الرقمية المخصصة،
-              تأسست لتكون الذراع التقني الموثوق للمشاريع الناشئة، والمنصات
-              الخدمية، والشركات الباحثة عن التميز الرقمي.
-            </p>
-            <p class="text-gray-600 mb-8 text-lg leading-relaxed">
-              نحن لا نقدّم فقط تطبيقات، بل نقدّم حلولًا متكاملة تُبنى باحتراف،
-              وتُدار بعناية، وتُطلق بثقة.
-            </p>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div class="bg-gray-50 p-6 rounded-xl">
-                <div
-                  class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4"
-                >
-                  <i class="ri-focus-3-line ri-lg text-primary"></i>
-                </div>
-                <h3 class="text-xl font-bold mb-2">رؤيتنا</h3>
-                <p class="text-gray-600">
-                  أن نكون الشريك التقني الأول في المنطقة لتحويل الأفكار إلى حلول
-                  رقمية متميزة.
-                </p>
-              </div>
-              <div class="bg-gray-50 p-6 rounded-xl">
-                <div
-                  class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4"
-                >
-                  <i class="ri-award-line ri-lg text-primary"></i>
-                </div>
-                <h3 class="text-xl font-bold mb-2">قيمنا</h3>
-                <p class="text-gray-600">
-                  الابتكار، الجودة، الموثوقية، والتميز في كل ما نقدمه لعملائنا.
-                </p>
-              </div>
+    <section id="about" class="py-24 relative overflow-hidden bg-white">
+      <div class="absolute inset-0 bg-gradient-to-b from-gray-50 to-white pointer-events-none"></div>
+      
+      <!-- Decorative Elements -->
+      <div class="absolute top-0 left-0 w-1/3 h-1/3 bg-gradient-to-br from-primary/5 to-transparent rounded-full blur-3xl"></div>
+      <div class="absolute bottom-0 right-0 w-1/2 h-1/2 bg-gradient-to-tl from-primary/5 to-transparent rounded-full blur-3xl"></div>
+
+      <div class="container mx-auto px-6 relative">
+        <div class="max-w-3xl mx-auto text-center mb-16">
+          <div class="inline-block mb-4">
+            <div class="flex items-center gap-2 text-primary/80 bg-primary/5 rounded-full py-2 px-4 border border-primary/10">
+              <span class="text-sm font-medium">من نحن؟</span>
+              <div class="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
             </div>
+          </div>
+          <h2 class="text-4xl font-bold mb-6">شريكك التقني الموثوق</h2>
+          <p class="text-gray-600 text-lg leading-relaxed">
+            YAS هي شركة تقنية سعودية، متخصصة في تطوير الحلول الرقمية المخصصة، تأسست لتكون الذراع التقني الموثوق للمشاريع الناشئة، والمنصات الخدمية، والشركات الباحثة عن التميز الرقمي.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Vision Card -->
+          <div class="group bg-white rounded-2xl p-8 shadow-lg shadow-gray-100/50 border border-gray-100 hover:border-primary/20 transition-all duration-300">
+            <div class="w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <i class="ri-focus-3-line text-2xl text-primary"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4">رؤيتنا</h3>
+            <p class="text-gray-600">
+              أن نكون الشريك التقني الأول في المنطقة لتحويل الأفكار إلى حلول رقمية متميزة.
+            </p>
+          </div>
+
+          <!-- Values Card -->
+          <div class="group bg-white rounded-2xl p-8 shadow-lg shadow-gray-100/50 border border-gray-100 hover:border-primary/20 transition-all duration-300">
+            <div class="w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <i class="ri-award-line text-2xl text-primary"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4">قيمنا</h3>
+            <p class="text-gray-600">
+              الابتكار، الجودة، الموثوقية، والتميز في كل ما نقدمه لعملائنا.
+            </p>
+          </div>
+
+          <!-- Approach Card -->
+          <div class="group bg-white rounded-2xl p-8 shadow-lg shadow-gray-100/50 border border-gray-100 hover:border-primary/20 transition-all duration-300">
+            <div class="w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <i class="ri-code-box-line text-2xl text-primary"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4">نهجنا</h3>
+            <p class="text-gray-600">
+              نحن لا نقدّم فقط تطبيقات، بل نقدّم حلولًا متكاملة تُبنى باحتراف، وتُدار بعناية، وتُطلق بثقة.
+            </p>
           </div>
         </div>
       </div>
     </section>
     <!-- How We Work Section -->
-    <section class="py-20 px-6 bg-gradient-to-b from-gray-50/50 to-white">
-      <div class="max-w-7xl mx-auto">
+    <section id="how-we-work" class="py-20 px-6 bg-gradient-to-b from-gray-50/50 to-white relative overflow-hidden">
+      <!-- Background Elements -->
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(23,72,252,0.1),transparent)] pointer-events-none"></div>
+      
+      <div class="max-w-7xl mx-auto relative">
         <div class="text-center mb-16 opacity-0 feature-fade-in">
           <span class="text-primary font-medium">منهجيتنا</span>
           <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-4">كيف نعمل؟</h2>
@@ -191,151 +367,208 @@
             الوثيق، والتخطيط الذكي، والاستماع الدقيق.
           </p>
         </div>
+
+        <!-- Interactive Process Steps -->
         <div class="relative">
-          <div
-            class="absolute top-1/2 left-8 right-8 h-1 bg-gradient-to-r from-gray-100 via-gray-200 to-gray-100 -translate-y-1/2 hidden lg:block"
-          ></div>
-          <div
-            class="absolute top-1/2 left-8 right-8 h-1 bg-gradient-to-r from-primary/10 via-primary/20 to-primary/10 -translate-y-1/2 hidden lg:block work-progress"
-          ></div>
+          <!-- Progress Line -->
+          <div class="absolute top-1/2 left-8 right-8 h-1 bg-gradient-to-r from-gray-100 via-gray-200 to-gray-100 -translate-y-1/2 hidden lg:block"></div>
+          <div class="absolute top-1/2 left-8 right-8 h-1 bg-gradient-to-r from-primary/10 via-primary/20 to-primary/10 -translate-y-1/2 hidden lg:block work-progress" style="width: 0%"></div>
+
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
-            <div class="work-step relative">
-              <div
-                class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
-              >
-                <div
-                  class="w-16 h-16 rounded-full bg-gradient-to-br from-primary/5 to-primary/20 flex items-center justify-center mb-6 mx-auto relative group"
-                >
-                  <div
-                    class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center absolute -top-2 -right-2 transform group-hover:rotate-12 transition-transform duration-300"
-                  >
+            <!-- Step 1 -->
+            <div class="work-step relative opacity-0 translate-y-8" style="transition: all 0.5s ease-out;">
+              <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group">
+                <div class="w-16 h-16 rounded-full bg-gradient-to-br from-primary/5 to-primary/20 flex items-center justify-center mb-6 mx-auto relative group cursor-pointer hover:from-primary/10 hover:to-primary/30 transition-all duration-300">
+                  <div class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center absolute -top-2 -right-2 transform group-hover:rotate-12 transition-transform duration-300">
                     1
                   </div>
-                  <i
-                    class="ri-customer-service-line ri-xl text-primary transform group-hover:scale-110 transition-transform duration-300"
-                  ></i>
+                  <i class="ri-customer-service-line ri-xl text-primary transform group-hover:scale-110 transition-transform duration-300"></i>
                 </div>
-                <h3 class="text-xl font-bold mb-4 text-center">
+                <h3 class="text-xl font-bold mb-4 text-center group-hover:text-primary transition-colors duration-300">
                   الاستماع والتحليل
                 </h3>
                 <p class="text-gray-600 text-center text-sm">
-                  نبدأ بالاستماع لفكرتك وتحليلها بعمق، لفهم احتياجاتك وأهدافك
-                  بشكل دقيق
+                  نبدأ بالاستماع لفكرتك وتحليلها بعمق، لفهم احتياجاتك وأهدافك بشكل دقيق
                 </p>
+                <div class="h-1 w-0 bg-primary mt-4 mx-auto group-hover:w-1/2 transition-all duration-500"></div>
               </div>
             </div>
-            <div class="work-step relative">
-              <div
-                class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300"
-              >
-                <div
-                  class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-6 mx-auto relative"
-                >
-                  <div
-                    class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center absolute -top-2 -right-2"
-                  >
+
+            <!-- Step 2 -->
+            <div class="work-step relative opacity-0 translate-y-8" style="transition: all 0.5s ease-out 0.2s;">
+              <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group">
+                <div class="w-16 h-16 rounded-full bg-gradient-to-br from-primary/5 to-primary/20 flex items-center justify-center mb-6 mx-auto relative group cursor-pointer hover:from-primary/10 hover:to-primary/30 transition-all duration-300">
+                  <div class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center absolute -top-2 -right-2 transform group-hover:rotate-12 transition-transform duration-300">
                     2
                   </div>
-                  <i class="ri-flow-chart ri-xl text-primary"></i>
+                  <i class="ri-flow-chart ri-xl text-primary transform group-hover:scale-110 transition-transform duration-300"></i>
                 </div>
-                <h3 class="text-xl font-bold mb-4 text-center">
+                <h3 class="text-xl font-bold mb-4 text-center group-hover:text-primary transition-colors duration-300">
                   التخطيط والتصميم
                 </h3>
                 <p class="text-gray-600 text-center text-sm">
-                  نضع خطة تنفيذ واضحة ومقسّمة على مراحل، مع تصميم تجربة مستخدم
-                  مميزة
+                  نضع خطة تنفيذ واضحة ومقسّمة على مراحل، مع تصميم تجربة مستخدم مميزة
                 </p>
+                <div class="h-1 w-0 bg-primary mt-4 mx-auto group-hover:w-1/2 transition-all duration-500"></div>
               </div>
             </div>
-            <div class="work-step relative">
-              <div
-                class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300"
-              >
-                <div
-                  class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-6 mx-auto relative"
-                >
-                  <div
-                    class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center absolute -top-2 -right-2"
-                  >
+
+            <!-- Step 3 -->
+            <div class="work-step relative opacity-0 translate-y-8" style="transition: all 0.5s ease-out 0.4s;">
+              <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group">
+                <div class="w-16 h-16 rounded-full bg-gradient-to-br from-primary/5 to-primary/20 flex items-center justify-center mb-6 mx-auto relative group cursor-pointer hover:from-primary/10 hover:to-primary/30 transition-all duration-300">
+                  <div class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center absolute -top-2 -right-2 transform group-hover:rotate-12 transition-transform duration-300">
                     3
                   </div>
-                  <i class="ri-code-box-line ri-xl text-primary"></i>
+                  <i class="ri-code-box-line ri-xl text-primary transform group-hover:scale-110 transition-transform duration-300"></i>
                 </div>
-                <h3 class="text-xl font-bold mb-4 text-center">
+                <h3 class="text-xl font-bold mb-4 text-center group-hover:text-primary transition-colors duration-300">
                   التطوير والبرمجة
                 </h3>
                 <p class="text-gray-600 text-center text-sm">
                   نقوم بالتطوير البرمجي باستخدام أحدث التقنيات وأفضل الممارسات
                 </p>
+                <div class="h-1 w-0 bg-primary mt-4 mx-auto group-hover:w-1/2 transition-all duration-500"></div>
               </div>
             </div>
-            <div class="work-step relative">
-              <div
-                class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300"
-              >
-                <div
-                  class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-6 mx-auto relative"
-                >
-                  <div
-                    class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center absolute -top-2 -right-2"
-                  >
+
+            <!-- Step 4 -->
+            <div class="work-step relative opacity-0 translate-y-8" style="transition: all 0.5s ease-out 0.6s;">
+              <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group">
+                <div class="w-16 h-16 rounded-full bg-gradient-to-br from-primary/5 to-primary/20 flex items-center justify-center mb-6 mx-auto relative group cursor-pointer hover:from-primary/10 hover:to-primary/30 transition-all duration-300">
+                  <div class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center absolute -top-2 -right-2 transform group-hover:rotate-12 transition-transform duration-300">
                     4
                   </div>
-                  <i class="ri-test-tube-line ri-xl text-primary"></i>
+                  <i class="ri-test-tube-line ri-xl text-primary transform group-hover:scale-110 transition-transform duration-300"></i>
                 </div>
-                <h3 class="text-xl font-bold mb-4 text-center">
+                <h3 class="text-xl font-bold mb-4 text-center group-hover:text-primary transition-colors duration-300">
                   الاختبار والتحسين
                 </h3>
                 <p class="text-gray-600 text-center text-sm">
                   نجري اختبارات مكثفة لضمان الجودة والأداء الأمثل للمنتج
                 </p>
+                <div class="h-1 w-0 bg-primary mt-4 mx-auto group-hover:w-1/2 transition-all duration-500"></div>
               </div>
             </div>
-            <div class="work-step relative">
-              <div
-                class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300"
-              >
-                <div
-                  class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-6 mx-auto relative"
-                >
-                  <div
-                    class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center absolute -top-2 -right-2"
-                  >
+
+            <!-- Step 5 -->
+            <div class="work-step relative opacity-0 translate-y-8" style="transition: all 0.5s ease-out 0.8s;">
+              <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group">
+                <div class="w-16 h-16 rounded-full bg-gradient-to-br from-primary/5 to-primary/20 flex items-center justify-center mb-6 mx-auto relative group cursor-pointer hover:from-primary/10 hover:to-primary/30 transition-all duration-300">
+                  <div class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center absolute -top-2 -right-2 transform group-hover:rotate-12 transition-transform duration-300">
                     5
                   </div>
-                  <i class="ri-rocket-line ri-xl text-primary"></i>
+                  <i class="ri-rocket-line ri-xl text-primary transform group-hover:scale-110 transition-transform duration-300"></i>
                 </div>
-                <h3 class="text-xl font-bold mb-4 text-center">الإطلاق</h3>
+                <h3 class="text-xl font-bold mb-4 text-center group-hover:text-primary transition-colors duration-300">
+                  الإطلاق
+                </h3>
                 <p class="text-gray-600 text-center text-sm">
                   نطلق المنتج بعد التأكد من جاهزيته وتوافقه مع المتطلبات
                 </p>
+                <div class="h-1 w-0 bg-primary mt-4 mx-auto group-hover:w-1/2 transition-all duration-500"></div>
               </div>
             </div>
-            <div class="work-step relative">
-              <div
-                class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300"
-              >
-                <div
-                  class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-6 mx-auto relative"
-                >
-                  <div
-                    class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center absolute -top-2 -right-2"
-                  >
+
+            <!-- Step 6 -->
+            <div class="work-step relative opacity-0 translate-y-8" style="transition: all 0.5s ease-out 1s;">
+              <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group">
+                <div class="w-16 h-16 rounded-full bg-gradient-to-br from-primary/5 to-primary/20 flex items-center justify-center mb-6 mx-auto relative group cursor-pointer hover:from-primary/10 hover:to-primary/30 transition-all duration-300">
+                  <div class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center absolute -top-2 -right-2 transform group-hover:rotate-12 transition-transform duration-300">
                     6
                   </div>
-                  <i class="ri-customer-service-2-line ri-xl text-primary"></i>
+                  <i class="ri-customer-service-2-line ri-xl text-primary transform group-hover:scale-110 transition-transform duration-300"></i>
                 </div>
-                <h3 class="text-xl font-bold mb-4 text-center">
+                <h3 class="text-xl font-bold mb-4 text-center group-hover:text-primary transition-colors duration-300">
                   المتابعة والدعم
                 </h3>
                 <p class="text-gray-600 text-center text-sm">
                   نقدم متابعة مستمرة ودعم فني متواصل بعد إطلاق المنتج
                 </p>
+                <div class="h-1 w-0 bg-primary mt-4 mx-auto group-hover:w-1/2 transition-all duration-500"></div>
               </div>
             </div>
           </div>
         </div>
       </div>
+
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          // Intersection Observer for scroll animations
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+                
+                // Animate progress line when first step is visible
+                if (entry.target.classList.contains('work-step')) {
+                  const progressLine = document.querySelector('.work-progress');
+                  if (progressLine) {
+                    progressLine.style.width = '100%';
+                    progressLine.style.transition = 'width 1.5s ease-out';
+                  }
+                }
+              }
+            });
+          }, {
+            threshold: 0.1
+          });
+
+          // Observe all work steps
+          document.querySelectorAll('.work-step').forEach(step => {
+            observer.observe(step);
+          });
+
+          // Add hover effect to steps
+          const workSteps = document.querySelectorAll('.work-step');
+          workSteps.forEach((step, index) => {
+            step.addEventListener('mouseenter', () => {
+              // Add active state to current step and previous steps
+              workSteps.forEach((s, i) => {
+                if (i <= index) {
+                  s.classList.add('active');
+                }
+              });
+            });
+
+            step.addEventListener('mouseleave', () => {
+              // Remove active state from all steps
+              workSteps.forEach(s => {
+                s.classList.remove('active');
+              });
+            });
+          });
+        });
+      </script>
+
+      <style>
+        .work-progress {
+          transition: width 1.5s ease-out;
+        }
+        
+        .work-step {
+          transition: all 0.3s ease-out;
+        }
+
+        .work-step.active .group {
+          transform: translateY(-0.5rem);
+        }
+
+        .work-step .group:hover {
+          transform: translateY(-0.5rem);
+        }
+
+        @keyframes float {
+          0% { transform: translateY(0px); }
+          50% { transform: translateY(-10px); }
+          100% { transform: translateY(0px); }
+        }
+
+        .animate-float {
+          animation: float 3s ease-in-out infinite;
+        }
+      </style>
     </section>
     <!-- Why YAS Section -->
     <section class="py-20 px-6 bg-white">
@@ -983,7 +1216,7 @@
       </div>
     </section>
     <!-- Achievements Section -->
-    <section class="py-20 px-6 bg-gray-50">
+    <section id="achievements" class="py-20 px-6 bg-gray-50">
       <div class="max-w-7xl mx-auto">
         <div class="text-center mb-16">
           <span class="text-primary font-medium">مشاريعنا</span>
@@ -1100,7 +1333,7 @@
       </div>
     </section>
     <!-- Success Stories Section -->
-    <section class="py-20 px-6 bg-white">
+    <section id="success-stories" class="py-20 px-6 bg-white">
       <div class="max-w-7xl mx-auto">
         <div class="text-center mb-16">
           <span class="text-primary font-medium">قصص نجاح</span>
@@ -1857,5 +2090,61 @@
       </div>
     </footer>
     <script src="js/main.js"></script>
+    <script>
+      // Add smooth scrolling behavior
+      document.addEventListener('DOMContentLoaded', function() {
+        // Get all navigation links
+        const navLinks = document.querySelectorAll('a[href^="#"]');
+        
+        navLinks.forEach(link => {
+          link.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return; // Skip if it's just "#"
+            
+            const targetElement = document.querySelector(targetId);
+            const navHeight = document.getElementById('mainNav').offsetHeight;
+            
+            if (targetElement) {
+              const targetPosition = targetElement.offsetTop - navHeight;
+              window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+              });
+            }
+          });
+        });
+
+        // Highlight active section in navigation
+        const sections = document.querySelectorAll('section[id]');
+        const navItems = document.querySelectorAll('.nav-link, .nav-link-mobile');
+        
+        function highlightNavigation() {
+          const scrollPosition = window.scrollY + window.innerHeight / 3;
+          
+          sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionBottom = sectionTop + section.offsetHeight;
+            const sectionId = section.getAttribute('id');
+            
+            if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+              navItems.forEach(item => {
+                item.classList.remove('text-primary');
+                if (item.getAttribute('href') === `#${sectionId}`) {
+                  item.classList.add('text-primary');
+                }
+              });
+            }
+          });
+        }
+
+        // Initial highlight check
+        highlightNavigation();
+        
+        // Update highlight on scroll
+        window.addEventListener('scroll', highlightNavigation);
+      });
+    </script>
   </body>
 </html>

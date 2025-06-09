@@ -75,4 +75,27 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   });
+
+  // Animated Tabs for Policies Section
+  const tabBtns = document.querySelectorAll('.tab-btn');
+  const tabPanes = document.querySelectorAll('.tab-pane');
+  const underline = document.getElementById('tab-underline');
+  function updateUnderline() {
+    const activeBtn = document.querySelector('.tab-btn.active');
+    if (activeBtn && underline) {
+      underline.style.width = activeBtn.offsetWidth + 'px';
+      underline.style.left = activeBtn.offsetLeft + 'px';
+    }
+  }
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', function () {
+      tabBtns.forEach(b => b.classList.remove('active', 'text-primary', 'border-primary'));
+      this.classList.add('active', 'text-primary', 'border-primary');
+      tabPanes.forEach(pane => pane.classList.remove('active'));
+      document.getElementById(this.getAttribute('data-tab')).classList.add('active');
+      updateUnderline();
+    });
+  });
+  window.addEventListener('resize', updateUnderline);
+  updateUnderline();
 }); 

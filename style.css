@@ -2,6 +2,76 @@
   content: "\f3c2";
 }
 
+/* Prevent layout shifts */
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "Tajawal", sans-serif;
+  overflow-x: hidden;
+  position: relative;
+  width: 100%;
+}
+
+/* Fix mobile menu container */
+.nav-mobile-container {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  transform: translateY(0);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.nav-mobile-container.hidden {
+  transform: translateY(-10px);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Prevent content shift when mobile menu opens */
+@media (max-width: 768px) {
+  body.menu-open {
+    overflow: hidden;
+  }
+  
+  .nav-mobile-container {
+    max-height: calc(100vh - 80px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* Fix animations to prevent layout shifts */
+.work-progress {
+  width: 0;
+  transition: width 0.6s ease;
+  will-change: width;
+}
+
+.work-step {
+  opacity: 0;
+  will-change: opacity, transform;
+}
+
+@media (max-width: 1024px) {
+  .work-progress {
+    display: none;
+  }
+}
+
+:root {
+  --primary: #1748fc;
+  --secondary: #13eeff;
+}
+
+.font-ar {
+  font-family: "Tajawal", sans-serif;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -20,34 +90,6 @@
     opacity: 1;
     transform: translateY(0);
   }
-}
-
-.work-progress {
-  width: 0;
-  transition: width 0.6s ease;
-}
-
-.work-step {
-  opacity: 0;
-}
-
-@media (max-width: 1024px) {
-  .work-progress {
-    display: none;
-  }
-}
-
-:root {
-  --primary: #1748fc;
-  --secondary: #13eeff;
-}
-
-.font-ar {
-  font-family: "Tajawal", sans-serif;
-}
-
-body {
-  font-family: "Tajawal", sans-serif;
 }
 
 @keyframes gradientFlow {

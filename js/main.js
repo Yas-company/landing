@@ -98,4 +98,10 @@ document.addEventListener("DOMContentLoaded", function () {
   });
   window.addEventListener('resize', updateUnderline);
   updateUnderline();
+
+  // Fix underline on horizontal scroll
+  const policyTabs = document.getElementById('policy-tabs');
+  if (policyTabs) {
+    policyTabs.addEventListener('scroll', updateUnderline);
+  }
 }); 

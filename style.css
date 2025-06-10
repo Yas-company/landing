@@ -205,4 +205,8 @@ body {
   #tab-underline {
     height: 3px;
   }
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
 } 
